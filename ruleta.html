@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAECR | Spin & Win Lucky Wheel</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="light-mode">
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAECR</a>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Home</a></li>
+                <li><a href="index.html#ofertas">Offers</a></li>
+                <li><a href="catalogo.html">Catalog</a></li>
+                <li><a href="ruleta.html" class="active"><i class='bx bx-gift'></i> Lucky Wheel</a></li>
+                <li><a href="tallas.html">Size Guide</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <i class='bx bx-moon'></i>
+                </button>
+                <button class="icon-btn cart-toggle-btn" aria-label="Cart" id="cart-toggle">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count-badge">2</span>
+                </button>
+                <a href="perfil.html" class="icon-btn" id="user-btn" title="My Account / Sign In">
+                    <i class='bx bx-user'></i>
+                </a>
+                <button class="icon-btn mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html#inicio">Home</a></li>
+            <li><a href="index.html#ofertas">Offers</a></li>
+            <li><a href="catalogo.html">Catalog</a></li>
+            <li><a href="ruleta.html">Lucky Wheel</a></li>
+            <li><a href="tallas.html">Size Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Header Banner -->
+    <header class="catalog-header-banner">
+        <div class="container">
+            <h1 class="catalog-header-title">SPIN & WIN REWARDS WHEEL</h1>
+            <p class="catalog-header-subtitle">Test your luck and unlock instant discount coupons up to 25% OFF!</p>
+        </div>
+    </header>
+
+    <!-- Dedicated Wheel Main Page Section -->
+    <main class="section size-page-section">
+        <div class="container">
+            <div class="wheel-section-card">
+                <div class="wheel-section-grid">
+                    <div class="wheel-section-info">
+                        <span class="badge badge-new" style="margin-bottom: 0.8rem;"><i class='bx bx-gift'></i>
+                            Exclusive Game</span>
+                        <h3>Instant Rewards Guaranteed</h3>
+                        <p>Every spin is a guaranteed winner! Spin the SAECR wheel to get your exclusive coupon code for
+                            your next order.</p>
+                        <ul class="wheel-perks-list">
+                            <li><i class='bx bx-check-circle'></i> 100% Free - No purchase necessary to spin</li>
+                            <li><i class='bx bx-check-circle'></i> Instant discounts up to 25% OFF & Free Gifts</li>
+                            <li><i class='bx bx-check-circle'></i> Valid for pre-orders and full catalog items</li>
+                        </ul>
+                    </div>
+
+                    <div class="wheel-section-graphic">
+                        <div class="wheel-bezel">
+                            <div class="wheel-led-ring">
+                                <span class="wheel-led" style="--i: 0;"></span>
+                                <span class="wheel-led" style="--i: 1;"></span>
+                                <span class="wheel-led" style="--i: 2;"></span>
+                                <span class="wheel-led" style="--i: 3;"></span>
+                                <span class="wheel-led" style="--i: 4;"></span>
+                                <span class="wheel-led" style="--i: 5;"></span>
+                                <span class="wheel-led" style="--i: 6;"></span>
+                                <span class="wheel-led" style="--i: 7;"></span>
+                                <span class="wheel-led" style="--i: 8;"></span>
+                                <span class="wheel-led" style="--i: 9;"></span>
+                                <span class="wheel-led" style="--i: 10;"></span>
+                                <span class="wheel-led" style="--i: 11;"></span>
+                            </div>
+                            <div class="wheel-container">
+                                <div class="wheel-pointer" id="section-wheel-pointer"></div>
+                                <canvas id="section-wheel-canvas" width="900" height="900"
+                                    class="wheel-canvas"></canvas>
+                                <button type="button" class="spin-center-btn" id="section-spin-btn">SPIN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Side Shopping Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3><i class='bx bx-shopping-bag'></i> My Cart (<span id="cart-drawer-count">2</span>)</h3>
+            <button class="close-cart-btn" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+
+        <div class="cart-drawer-items" id="cart-drawer-items">
+            <!-- Item 1 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Noir Element Jacket"
+                        class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Urban Collection</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Noir Element Jacket</a></h4>
+                    <span class="cart-item-meta">Size: <strong>M</strong> | Color: <strong>Noir Black</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-811</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$120.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> View full
+                        details</a>
+                </div>
+                <button class="remove-item-btn" title="Remove"><i class='bx bx-trash'></i></button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Essential White Tee"
+                        class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">SAECR Basics</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Essential White Tee</a></h4>
+                    <span class="cart-item-meta">Size: <strong>L</strong> | Color: <strong>Ivory White</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-92c</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$45.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> View full
+                        details</a>
+                </div>
+                <button class="remove-item-btn" title="Remove"><i class='bx bx-trash'></i></button>
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer">
+            <!-- Cart Coupon Application Box -->
+            <div class="cart-coupon-box">
+                <div class="active-coupon-badge hidden" id="active-coupon-badge">
+                    <div class="coupon-badge-info">
+                        <i class='bx bxs-coupon'></i>
+                        <span>Coupon <strong id="applied-coupon-name">SAECR15</strong> Applied!</span>
+                    </div>
+                    <button type="button" class="remove-coupon-btn" id="remove-coupon-btn" title="Remove Coupon"><i
+                            class='bx bx-x'></i></button>
+                </div>
+                <div class="coupon-input-row" id="coupon-input-row">
+                    <input type="text" id="cart-coupon-input" placeholder="Promo / Coupon Code">
+                    <button type="button" class="btn btn-primary btn-sm" id="apply-coupon-btn">Apply</button>
+                </div>
+            </div>
+
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">$165.00</strong>
+            </div>
+            <div class="cart-summary-line discount-line hidden" id="cart-discount-line">
+                <span>Discount (<span id="discount-label">15% OFF</span>)</span>
+                <span class="discount-amount-tag" id="cart-discount-amount">-$24.75</span>
+            </div>
+            <div class="cart-summary-line">
+                <span>Shipping</span>
+                <span class="free-shipping-tag">Free</span>
+            </div>
+            <div class="cart-summary-line total-line">
+                <span>Total</span>
+                <strong id="cart-final-total">$165.00</strong>
+            </div>
+            <p class="cart-tax-notice">Taxes calculated at checkout.</p>
+
+            <button class="btn btn-primary checkout-btn">Proceed to Checkout <i
+                    class='bx bx-right-arrow-alt'></i></button>
+            <a href="catalogo.html" class="continue-shopping">Continue Shopping</a>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="logo">SAECR</h2>
+                <p>Redefining modern minimalism with bold aesthetics.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogo.html">Full Catalog</a></li>
+                    <li><a href="tallas.html">Size Guide</a></li>
+                    <li><a href="ruleta.html">Lucky Wheel</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="terminos.html#privacidad" target="_blank">Privacy Policy</a></li>
+                    <li><a href="terminos.html" target="_blank">Terms of Service</a></li>
+                    <li><a href="terminos.html#garantia" target="_blank">Returns & Exchanges</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SAECR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Victory Coupon Pop-up Modal -->
+    <div class="modal-overlay" id="win-modal-overlay"></div>
+    <div class="win-modal" id="win-modal">
+        <div class="win-modal-header">
+            <div class="win-trophy-icon"><i class='bx bx-trophy'></i></div>
+            <h3>CONGRATULATIONS!</h3>
+            <p>You spun and unlocked an exclusive SAECR discount coupon!</p>
+        </div>
+        <div class="win-modal-body">
+            <div class="win-coupon-card">
+                <span class="win-prize-title" id="win-prize-title">15% OFF YOUR ORDER</span>
+                <div class="win-code-box">
+                    <span id="win-code-text">SAECR15</span>
+                </div>
+                <small><i class='bx bx-check-shield'></i> Valid for all items in catalog & pre-orders</small>
+            </div>
+            <div class="win-modal-actions">
+                <button type="button" class="btn btn-primary btn-lg" id="apply-win-coupon-btn">
+                    <i class='bx bx-shopping-bag'></i> Apply to Cart & Shop Now
+                </button>
+                <button type="button" class="btn btn-outline" id="copy-win-code-btn">
+                    <i class='bx bx-copy'></i> Copy Code
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Celebration Confetti Overlay Canvas -->
+    <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

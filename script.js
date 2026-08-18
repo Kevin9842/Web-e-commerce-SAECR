@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- Navbar Scroll Effect ---
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Dark Mode Toggle ---
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    
+
     // Check local storage for theme preference
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         body.classList.toggle('light-mode');
-        
+
         let theme = 'light';
         if (body.classList.contains('dark-mode')) {
             theme = 'dark';
@@ -66,21 +66,29 @@ document.addEventListener('DOMContentLoaded', () => {
     let slideInterval;
 
     function showSlide(index) {
+        if (!slides || slides.length === 0) return;
+
         slides.forEach(slide => slide.classList.remove('active'));
         indicators.forEach(ind => ind.classList.remove('active'));
-        
+
         if (index >= totalSlides) currentSlide = 0;
         if (index < 0) currentSlide = totalSlides - 1;
-        
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
-        
+
+        if (slides[currentSlide]) {
+            slides[currentSlide].classList.add('active');
+        }
+        if (indicators[currentSlide]) {
+            indicators[currentSlide].classList.add('active');
+        }
+
         // Re-trigger animation
-        const content = slides[currentSlide].querySelector('.carousel-content');
-        if (content) {
-            content.classList.remove('fade-up');
-            void content.offsetWidth;
-            content.classList.add('fade-up');
+        if (slides[currentSlide]) {
+            const content = slides[currentSlide].querySelector('.carousel-content');
+            if (content) {
+                content.classList.remove('fade-up');
+                void content.offsetWidth;
+                content.classList.add('fade-up');
+            }
         }
     }
 
@@ -124,14 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isDragging) return;
         isDragging = false;
         carouselWrapper.classList.remove('dragging');
-        
+
         // Minimum threshold to trigger slide change (50px)
         if (currentTranslateX < -50) {
             nextSlide();
         } else if (currentTranslateX > 50) {
             prevSlide();
         }
-        
+
         currentTranslateX = 0;
         startInterval();
     }
@@ -154,7 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startInterval() {
-        slideInterval = setInterval(nextSlide, 5000);
+        if (totalSlides > 0) {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
     }
 
     function resetInterval() {
@@ -162,7 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
         startInterval();
     }
 
-    startInterval(); // Start auto sliding
+    if (totalSlides > 0) {
+        startInterval(); // Start auto sliding
+    }
 
     // --- Scroll Animations (Intersection Observer) ---
     const scrollElements = document.querySelectorAll('.fade-up-scroll');
@@ -187,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         handleScrollAnimation();
     });
-    
+
     // Trigger once on load
     handleScrollAnimation();
 
@@ -200,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove active from all
             tabBtns.forEach(t => t.classList.remove('active'));
             sizeTables.forEach(t => t.classList.remove('active'));
-            
+
             // Add active to clicked
             btn.classList.add('active');
             const target = btn.getAttribute('data-target');
@@ -400,4 +412,334 @@ document.addEventListener('DOMContentLoaded', () => {
     closeTermsBtns.forEach(btn => {
         btn.addEventListener('click', closeTermsModal);
     });
+
+    // --- Spin-to-Win Coupon Wheel & Cart Coupon Engine ---
+    const openWheelBtn = document.getElementById('open-wheel-btn');
+    const wheelModal = document.getElementById('wheel-modal');
+    const wheelOverlay = document.getElementById('wheel-modal-overlay');
+    const closeWheelBtn = document.getElementById('close-wheel-modal');
+
+    // Victory Pop-up Modal Elements
+    const winModal = document.getElementById('win-modal');
+    const winOverlay = document.getElementById('win-modal-overlay');
+    const closeWinModalBtn = document.getElementById('close-win-modal');
+    const winPrizeTitle = document.getElementById('win-prize-title');
+    const winCodeText = document.getElementById('win-code-text');
+    const applyWinCouponBtn = document.getElementById('apply-win-coupon-btn');
+    const copyWinCodeBtn = document.getElementById('copy-win-code-btn');
+
+    // Cart Coupon Control Elements
+    const cartCouponInput = document.getElementById('cart-coupon-input');
+    const applyCouponBtn = document.getElementById('apply-coupon-btn');
+    const activeCouponBadge = document.getElementById('active-coupon-badge');
+    const appliedCouponName = document.getElementById('applied-coupon-name');
+    const removeCouponBtn = document.getElementById('remove-coupon-btn');
+    const cartDiscountLine = document.getElementById('cart-discount-line');
+    const discountLabel = document.label ? document.getElementById('discount-label') : document.getElementById('discount-label');
+    const cartDiscountAmount = document.getElementById('cart-discount-amount');
+    const cartSubtotalEl = document.getElementById('cart-subtotal');
+    const cartFinalTotalEl = document.getElementById('cart-final-total');
+
+    // SAECR Brand Palette
+    const prizes = [
+        { label: '15% OFF', code: 'SAECR15', color: '#111111', textColor: '#ffffff', rate: 0.15 },
+        { label: 'FREE SHIP', code: 'FREESHIP', color: '#d90429', textColor: '#ffffff', rate: 0.00, freeShip: true },
+        { label: '20% OFF', code: 'SAECR20', color: '#1f1f1f', textColor: '#ffffff', rate: 0.20 },
+        { label: '10% OFF', code: 'SAECR10', color: '#ffffff', textColor: '#111111', rate: 0.10 },
+        { label: '25% JACKET', code: 'JACKET25', color: '#a1031d', textColor: '#ffffff', rate: 0.25 },
+        { label: 'FREE GIFT', code: 'SAECRGIFT', color: '#161616', textColor: '#ffffff', rate: 0.15 }
+    ];
+
+    // Coupon Calculation Engine
+    let activeCoupon = localStorage.getItem('saecr_active_coupon') || null;
+
+    function recalculateCart() {
+        const subtotal = 165.00; // Base sample subtotal
+        if (cartSubtotalEl) cartSubtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+
+        if (activeCoupon) {
+            const prizeObj = prizes.find(p => p.code === activeCoupon) || { code: activeCoupon, rate: 0.15, label: '15% OFF' };
+            const discountValue = subtotal * (prizeObj.rate || 0.15);
+            const finalTotal = Math.max(0, subtotal - discountValue);
+
+            if (activeCouponBadge) activeCouponBadge.classList.remove('hidden');
+            if (appliedCouponName) appliedCouponName.textContent = activeCoupon;
+            if (cartDiscountLine) cartDiscountLine.classList.remove('hidden');
+            const discLbl = document.getElementById('discount-label');
+            if (discLbl) discLbl.textContent = prizeObj.label;
+            if (cartDiscountAmount) cartDiscountAmount.textContent = `-$${discountValue.toFixed(2)}`;
+            if (cartFinalTotalEl) cartFinalTotalEl.textContent = `$${finalTotal.toFixed(2)}`;
+        } else {
+            if (activeCouponBadge) activeCouponBadge.classList.add('hidden');
+            if (cartDiscountLine) cartDiscountLine.classList.add('hidden');
+            if (cartFinalTotalEl) cartFinalTotalEl.textContent = `$${subtotal.toFixed(2)}`;
+        }
+    }
+
+    recalculateCart();
+
+    if (applyCouponBtn && cartCouponInput) {
+        applyCouponBtn.addEventListener('click', () => {
+            const code = cartCouponInput.value.trim().toUpperCase();
+            if (code) {
+                activeCoupon = code;
+                localStorage.setItem('saecr_active_coupon', code);
+                recalculateCart();
+                showToast(`Coupon ${code} applied successfully!`);
+                cartCouponInput.value = '';
+            }
+        });
+    }
+
+    if (removeCouponBtn) {
+        removeCouponBtn.addEventListener('click', () => {
+            activeCoupon = null;
+            localStorage.removeItem('saecr_active_coupon');
+            recalculateCart();
+            showToast('Coupon removed.');
+        });
+    }
+
+    // Standalone Confetti Burst Engine
+    function launchConfettiBurst() {
+        const canvas = document.getElementById('confetti-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const colors = ['#ffffff', '#d90429', '#111111', '#ff4d6d', '#ffd700'];
+
+        for (let i = 0; i < 120; i++) {
+            particles.push({
+                x: window.innerWidth / 2,
+                y: window.innerHeight / 3,
+                vx: (Math.random() - 0.5) * 20,
+                vy: (Math.random() - 0.8) * 20,
+                size: Math.random() * 8 + 5,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                rotation: Math.random() * 360,
+                vRot: (Math.random() - 0.5) * 10,
+                opacity: 1,
+                decay: Math.random() * 0.015 + 0.008
+            });
+        }
+
+        function renderConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            let activeCount = 0;
+
+            particles.forEach(p => {
+                if (p.opacity > 0) {
+                    activeCount++;
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.4;
+                    p.rotation += p.vRot;
+                    p.opacity -= p.decay;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.globalAlpha = Math.max(0, p.opacity);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                }
+            });
+
+            if (activeCount > 0) requestAnimationFrame(renderConfetti);
+            else ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        renderConfetti();
+    }
+
+    // Draw Wheel on Canvas
+    function drawWheelOnCanvas(canvasEl) {
+        if (!canvasEl) return;
+        const ctx = canvasEl.getContext('2d');
+        const numSlices = prizes.length;
+        const radius = canvasEl.width / 2;
+        const sliceAngle = (2 * Math.PI) / numSlices;
+
+        ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+
+        for (let i = 0; i < numSlices; i++) {
+            const angle = i * sliceAngle;
+            ctx.beginPath();
+            ctx.fillStyle = prizes[i].color;
+            ctx.moveTo(radius, radius);
+            ctx.arc(radius, radius, radius - 6, angle, angle + sliceAngle);
+            ctx.lineTo(radius, radius);
+            ctx.fill();
+
+            // Divider Line
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Label
+            ctx.save();
+            ctx.translate(radius, radius);
+            ctx.rotate(angle + sliceAngle / 2);
+            ctx.textAlign = 'right';
+            ctx.fillStyle = prizes[i].textColor;
+            ctx.font = 'bold 28px Outfit, sans-serif';
+            ctx.shadowColor = prizes[i].textColor === '#ffffff' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.3)';
+            ctx.shadowBlur = 3;
+            ctx.fillText(prizes[i].label, radius - 50, 9);
+            ctx.restore();
+        }
+
+        // Outer ring
+        ctx.beginPath();
+        ctx.arc(radius, radius, radius - 4, 0, 2 * Math.PI);
+        ctx.strokeStyle = '#2a2a2a';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    }
+
+    // Open Victory Pop-up Modal
+    function openWinModal(prize) {
+        if (winPrizeTitle) winPrizeTitle.textContent = `${prize.label} YOUR ORDER`;
+        if (winCodeText) winCodeText.textContent = prize.code;
+
+        if (winModal && winOverlay) {
+            winModal.classList.add('open');
+            winOverlay.classList.add('open');
+        }
+
+        launchConfettiBurst();
+    }
+
+    function closeWinModal() {
+        if (winModal && winOverlay) {
+            winModal.classList.remove('open');
+            winOverlay.classList.remove('open');
+        }
+    }
+
+    if (closeWinModalBtn) closeWinModalBtn.addEventListener('click', closeWinModal);
+    if (winOverlay) winOverlay.addEventListener('click', closeWinModal);
+
+    if (applyWinCouponBtn) {
+        applyWinCouponBtn.addEventListener('click', () => {
+            const code = winCodeText ? winCodeText.textContent : 'SAECR15';
+            activeCoupon = code;
+            localStorage.setItem('saecr_active_coupon', code);
+            recalculateCart();
+            closeWinModal();
+            closeWheelModal();
+            openCart();
+            showToast(`Coupon ${code} applied to your cart!`);
+        });
+    }
+
+    if (copyWinCodeBtn) {
+        copyWinCodeBtn.addEventListener('click', () => {
+            const code = winCodeText ? winCodeText.textContent : 'SAECR15';
+            navigator.clipboard.writeText(code).then(() => {
+                copyWinCodeBtn.innerHTML = "<i class='bx bx-check'></i> Copied!";
+                showToast('Coupon code copied!');
+                setTimeout(() => {
+                    copyWinCodeBtn.innerHTML = "<i class='bx bx-copy'></i> Copy Code";
+                }, 2000);
+            });
+        });
+    }
+
+    function setupWheelInstance(canvasId, spinBtnId, pointerId) {
+        const canvas = document.getElementById(canvasId);
+        const spinBtn = document.getElementById(spinBtnId);
+        const pointer = document.getElementById(pointerId);
+
+        if (!canvas) return;
+
+        drawWheelOnCanvas(canvas);
+
+        let instanceDegree = 0;
+        let isSpinning = false;
+
+        // Reset button state on load so it's always ready for testing
+        if (spinBtn) {
+            spinBtn.disabled = false;
+            spinBtn.style.opacity = '1';
+            if (spinBtn.tagName === 'BUTTON' && spinBtn.classList.contains('spin-center-btn')) {
+                spinBtn.textContent = 'SPIN';
+            }
+        }
+
+        if (spinBtn) {
+            spinBtn.addEventListener('click', () => {
+                if (isSpinning) return;
+                isSpinning = true;
+                spinBtn.disabled = true;
+                spinBtn.style.opacity = '0.5';
+
+                const bezel = canvas.closest('.wheel-bezel');
+                if (bezel) bezel.classList.add('spinning');
+
+                const tickInterval = setInterval(() => {
+                    if (pointer) {
+                        pointer.classList.add('tick');
+                        setTimeout(() => pointer.classList.remove('tick'), 60);
+                    }
+                }, 110);
+
+                const randomIndex = Math.floor(Math.random() * prizes.length);
+                const numSlices = prizes.length;
+                const sliceDegrees = 360 / numSlices;
+
+                const targetDegree = (360 * 6) + (270 - (randomIndex * sliceDegrees) - (sliceDegrees / 2));
+                instanceDegree += targetDegree;
+
+                canvas.style.transform = `rotate(${instanceDegree}deg)`;
+
+                setTimeout(() => {
+                    clearInterval(tickInterval);
+                    if (bezel) bezel.classList.remove('spinning');
+
+                    const prize = prizes[randomIndex];
+                    isSpinning = false;
+                    spinBtn.disabled = false;
+                    spinBtn.style.opacity = '1';
+
+                    openWinModal(prize);
+                }, 4500);
+            });
+        }
+    }
+
+    // Modal Instance
+    setupWheelInstance('wheel-canvas', 'spin-btn', 'modal-wheel-pointer');
+    // Dedicated Section Instance
+    setupWheelInstance('section-wheel-canvas', 'section-spin-btn', 'section-wheel-pointer');
+
+    function openWheelModal() {
+        if (wheelModal && wheelOverlay) {
+            wheelModal.classList.add('open');
+            wheelOverlay.classList.add('open');
+        }
+    }
+
+    function closeWheelModal() {
+        if (wheelModal && wheelOverlay) {
+            wheelModal.classList.remove('open');
+            wheelOverlay.classList.remove('open');
+        }
+    }
+
+    if (openWheelBtn) openWheelBtn.addEventListener('click', openWheelModal);
+    if (closeWheelBtn) closeWheelBtn.addEventListener('click', closeWheelModal);
+    if (wheelOverlay) wheelOverlay.addEventListener('click', closeWheelModal);
+
+    // Auto open pop-up after 3 seconds on home page for previewing
+    if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+        setTimeout(() => {
+            openWheelModal();
+        }, 3000);
+    }
 });

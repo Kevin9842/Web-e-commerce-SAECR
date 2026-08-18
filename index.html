@@ -24,6 +24,7 @@
             <ul class="nav-links">
                 <li><a href="#inicio">Home</a></li>
                 <li><a href="#ofertas">Offers</a></li>
+                <li><a href="ruleta.html"><i class='bx bx-gift'></i> Lucky Wheel</a></li>
                 <li><a href="catalogo.html">Catalog</a></li>
                 <li><a href="tallas.html">Size Guide</a></li>
             </ul>
@@ -57,16 +58,14 @@
     </div>
 
     <!-- Hero Header / Brand Banner -->
-    <header id="inicio" class="hero-section hero-banner"
-        style="background-image: url('img/489f96b5937737e738f3c1789f232bcb.jpg');">
+    <header id="inicio" class="hero-section hero-banner" style="background-image: url('img/baner.jpeg');">
         <div class="hero-overlay"></div>
         <div class="hero-content fade-up">
             <span class="hero-badge">STYLE & HIGH FASHION</span>
             <h1 class="hero-title">SAECR</h1>
             <p class="hero-subtitle">Avant-garde designs with minimalist silhouette and bold aesthetics.</p>
             <div class="hero-cta-group">
-                <a href="#ofertas" class="btn btn-primary">View Featured Offers <i
-                        class='bx bx-down-arrow-alt'></i></a>
+                <a href="#ofertas" class="btn btn-primary">View Featured Offers <i class='bx bx-down-arrow-alt'></i></a>
                 <a href="#catalogo" class="btn btn-outline">Explore Catalog</a>
             </div>
         </div>
@@ -287,272 +286,387 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section class="section reviews-section">
-        <div class="container">
-            <div class="section-header center fade-up-scroll">
-                <h2 class="section-title">What Our Customers Say</h2>
-            </div>
-            <div class="reviews-grid">
-                <div class="review-card fade-up-scroll">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
-                            class='bx bxs-star'></i><i class='bx bxs-star'></i>
-                    </div>
-                    <p class="review-text">"The quality of the Noir Element jacket is unreal. The subtle red lining detail is a total head-turner."</p>
-                    <p class="review-author">— Carlos M.</p>
+        <!-- Reviews Section -->
+        <section class="section reviews-section">
+            <div class="container">
+                <div class="section-header center fade-up-scroll">
+                    <h2 class="section-title">What Our Customers Say</h2>
                 </div>
-                <div class="review-card fade-up-scroll" style="transition-delay: 0.1s;">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
-                            class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
-                    </div>
-                    <p class="review-text">"Minimalism at its best. The tees fit perfectly and the heavyweight cotton feels truly premium."</p>
-                    <p class="review-author">— Alejandro T.</p>
-                </div>
-                <div class="review-card fade-up-scroll" style="transition-delay: 0.2s;">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
-                            class='bx bxs-star'></i><i class='bx bxs-star'></i>
-                    </div>
-                    <p class="review-text">"Top-notch customer support. I was unsure about my sizing and the guide was spot on!"</p>
-                    <p class="review-author">— Sofia R.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h2 class="logo">SAECR</h2>
-                <p>Redefining modern minimalism with bold aesthetics.</p>
-                <div class="social-links">
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-tiktok'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#inicio">Home</a></li>
-                    <li><a href="#catalogo">Full Catalog</a></li>
-                    <li><a href="#tallas">Size Guide</a></li>
-                    <li><a href="#">Track Order</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Policies</h3>
-                <ul>
-                    <li><a href="terminos.html#privacidad" target="_blank">Privacy Policy</a></li>
-                    <li><a href="terminos.html" target="_blank">Terms of Service</a></li>
-                    <li><a href="terminos.html#garantia" target="_blank">Returns & Exchanges</a></li>
-                </ul>
-            </div>
-            <div class="footer-newsletter">
-                <h3>Join the SAECR Club</h3>
-                <p>Get exclusive deals and early access to upcoming drops.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit"><i class='bx bx-right-arrow-alt'></i></button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 SAECR. All rights reserved.</p>
-        </div>
-        <!-- Side Shopping Cart Drawer -->
-        <div class="cart-overlay" id="cart-overlay"></div>
-        <aside class="cart-drawer" id="cart-drawer">
-            <div class="cart-drawer-header">
-                <h3><i class='bx bx-shopping-bag'></i> My Cart (<span id="cart-drawer-count">2</span>)</h3>
-                <button class="close-cart-btn" id="close-cart"><i class='bx bx-x'></i></button>
-            </div>
-
-            <div class="cart-drawer-items" id="cart-drawer-items">
-                <!-- Item 1 -->
-                <div class="cart-item">
-                    <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg"
-                            alt="Noir Element Jacket" class="cart-item-img"></a>
-                    <div class="cart-item-details">
-                        <span class="cart-item-category">Urban Collection</span>
-                        <h4 class="cart-item-title"><a href="producto.html">Noir Element Jacket</a></h4>
-                        <span class="cart-item-meta">Size: <strong>M</strong> | Color: <strong>Noir Black</strong></span>
-                        <span class="cart-item-meta">Ref: #SAE-811</span>
-                        <div class="cart-item-price-row">
-                            <span class="cart-item-price">$120.00</span>
-                            <div class="cart-item-qty">
-                                <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
-                                <span class="item-qty">1</span>
-                                <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
-                            </div>
+                <div class="reviews-grid">
+                    <div class="review-card fade-up-scroll">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                                class='bx bxs-star'></i><i class='bx bxs-star'></i>
                         </div>
-                        <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> View full details</a>
+                        <p class="review-text">"The quality of the Noir Element jacket is unreal. The subtle red lining
+                            detail is a total head-turner."</p>
+                        <p class="review-author">— Carlos M.</p>
                     </div>
-                    <button class="remove-item-btn" title="Remove"><i class='bx bx-trash'></i></button>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="cart-item">
-                    <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg"
-                            alt="Essential White Tee" class="cart-item-img"></a>
-                    <div class="cart-item-details">
-                        <span class="cart-item-category">SAECR Basics</span>
-                        <h4 class="cart-item-title"><a href="producto.html">Essential White Tee</a></h4>
-                        <span class="cart-item-meta">Size: <strong>L</strong> | Color: <strong>Ivory White</strong></span>
-                        <span class="cart-item-meta">Ref: #SAE-92c</span>
-                        <div class="cart-item-price-row">
-                            <span class="cart-item-price">$45.00</span>
-                            <div class="cart-item-qty">
-                                <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
-                                <span class="item-qty">1</span>
-                                <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
-                            </div>
+                    <div class="review-card fade-up-scroll" style="transition-delay: 0.1s;">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                                class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
                         </div>
-                        <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> View full details</a>
+                        <p class="review-text">"Minimalism at its best. The tees fit perfectly and the heavyweight
+                            cotton feels truly premium."</p>
+                        <p class="review-author">— Alejandro T.</p>
                     </div>
-                    <button class="remove-item-btn" title="Remove"><i class='bx bx-trash'></i></button>
-                </div>
-            </div>
-
-            <div class="cart-drawer-footer">
-                <div class="cart-summary-line">
-                    <span>Subtotal</span>
-                    <strong id="cart-subtotal">$165.00</strong>
-                </div>
-                <div class="cart-summary-line">
-                    <span>Shipping</span>
-                    <span class="free-shipping-tag">Free</span>
-                </div>
-                <p class="cart-tax-notice">Taxes calculated at checkout.</p>
-
-                <button class="btn btn-primary checkout-btn">Proceed to Checkout <i
-                        class='bx bx-right-arrow-alt'></i></button>
-                <a href="catalogo.html" class="continue-shopping">Continue Shopping</a>
-            </div>
-            <!-- Login & Register Modal -->
-            <div class="modal-overlay" id="auth-modal-overlay"></div>
-            <div class="auth-modal" id="auth-modal">
-                <div class="modal-header">
-                    <h3><i class='bx bx-user-circle'></i> Customer Account</h3>
-                    <button class="modal-close-btn" id="close-auth-modal"><i class='bx bx-x'></i></button>
-                </div>
-                <div class="modal-body">
-                    <div class="auth-tabs">
-                        <button type="button" class="auth-tab-btn active" data-auth-tab="login-form">Sign In</button>
-                        <button type="button" class="auth-tab-btn" data-auth-tab="register-form">Create Account</button>
-                    </div>
-
-                    <!-- Login Form -->
-                    <div class="auth-tab-pane active" id="login-form">
-                        <button type="button" class="btn btn-google" id="google-login-btn">
-                            <svg width="20" height="20" viewBox="0 0 18 18">
-                                <path fill="#4285F4"
-                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.617z" />
-                                <path fill="#34A853"
-                                    d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
-                                <path fill="#FBBC05"
-                                    d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
-                                <path fill="#EA4335"
-                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
-                            </svg>
-                            <span>Continue with Google</span>
-                        </button>
-                        <div class="auth-divider"><span>or with your email</span></div>
-                        <form class="auth-form" id="login-form-element">
-                            <div class="input-group">
-                                <label>Email Address</label>
-                                <input type="email" placeholder="example@email.com" required>
-                            </div>
-                            <div class="input-group">
-                                <label>Password</label>
-                                <input type="password" placeholder="Your password" required>
-                            </div>
-                            <div class="auth-options-row">
-                                <label class="remember-me">
-                                    <input type="checkbox" checked> Remember me
-                                </label>
-                                <a href="#" class="forgot-pass-link">Forgot password?</a>
-                            </div>
-                            <button type="submit" class="btn btn-primary auth-submit-btn">Sign In to My Account</button>
-                        </form>
-                    </div>
-
-                    <!-- Register Form -->
-                    <div class="auth-tab-pane" id="register-form">
-                        <button type="button" class="btn btn-google" id="google-register-btn">
-                            <svg width="20" height="20" viewBox="0 0 18 18">
-                                <path fill="#4285F4"
-                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.617z" />
-                                <path fill="#34A853"
-                                    d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
-                                <path fill="#FBBC05"
-                                    d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
-                                <path fill="#EA4335"
-                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
-                            </svg>
-                            <span>Sign up with Google</span>
-                        </button>
-                        <div class="auth-divider"><span>or complete your details</span></div>
-                        <form class="auth-form" id="register-form-element">
-                            <div class="input-group">
-                                <label>Full Name</label>
-                                <input type="text" placeholder="Your full name" required>
-                            </div>
-                            <div class="input-group">
-                                <label>Email Address</label>
-                                <input type="email" placeholder="example@email.com" required>
-                            </div>
-                            <div class="input-group">
-                                <label>Password</label>
-                                <input type="password" placeholder="Minimum 8 characters" required>
-                            </div>
-                            <div class="auth-options-row">
-                                <label class="remember-me">
-                                    <input type="checkbox" id="terms-checkbox" required disabled>
-                                    <span>I have read and agree to the <a href="#" class="terms-link" id="open-terms-btn">Terms & Conditions</a></span>
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary auth-submit-btn">Create My Account</button>
-                        </form>
+                    <div class="review-card fade-up-scroll" style="transition-delay: 0.2s;">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                                class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                        </div>
+                        <p class="review-text">"Top-notch customer support. I was unsure about my sizing and the guide
+                            was spot on!"</p>
+                        <p class="review-author">— Sofia R.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Terms & Conditions Modal -->
-            <div class="modal-overlay" id="terms-modal-overlay"></div>
-            <div class="terms-modal" id="terms-modal">
-                <div class="modal-header">
-                    <h3><i class='bx bx-file'></i> SAECR Terms of Service</h3>
-                    <button class="modal-close-btn" id="close-terms-modal"><i class='bx bx-x'></i></button>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container footer-grid">
+                <div class="footer-brand">
+                    <h2 class="logo">SAECR</h2>
+                    <p>Redefining modern minimalism with bold aesthetics.</p>
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-tiktok'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                    </div>
                 </div>
-                <div class="modal-body" id="terms-modal-body" style="max-height: 320px; overflow-y: auto; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; margin: 1.2rem 1.8rem;">
-                    <h4>1. Account Registration & Security</h4>
-                    <p>By registering on SAECR, you guarantee to provide truthful information for the accurate processing of your orders, purchases, and pre-order reservations. You are responsible for keeping your credentials safe.</p>
-
-                    <h4>2. Pre-Order & Reservation Policies</h4>
-                    <p>Purchases made under the <strong>Pre-Order</strong> category correspond to limited-edition boutique workshop garments. Estimated shipping dates are clearly displayed upon order confirmation.</p>
-
-                    <h4>3. Shipping & Satisfaction Guarantee</h4>
-                    <p>All shipments include real-time tracking. You have 30 continuous days following receipt to request size exchanges or returns at no additional management fee.</p>
-
-                    <h4>4. Data Protection & Privacy</h4>
-                    <p>Your personal details and financial transactions are encrypted and secured under strict 256-bit SSL cybersecurity and PCI-DSS Level 1 international standards.</p>
-
-                    <h4>5. Mandatory Confirmation</h4>
-                    <p>By clicking the acceptance button at the bottom of this document, you confirm that you have read this agreement in full and consent to comply with SAECR policies.</p>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#inicio">Home</a></li>
+                        <li><a href="#catalogo">Full Catalog</a></li>
+                        <li><a href="#tallas">Size Guide</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
                 </div>
-                <div class="modal-footer" style="padding: 1.2rem 1.8rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
-                    <small id="scroll-prompt-text" style="color: var(--primary-color); font-size: 0.82rem; font-weight: 500;"><i class='bx bx-down-arrow-alt bx-bounce'></i> Scroll to the bottom to enable acceptance</small>
-                    <button type="button" class="btn btn-primary btn-sm" id="accept-terms-btn" disabled style="min-width: 170px; opacity: 0.5; cursor: not-allowed;"><i class='bx bx-lock-alt'></i> Accept Terms</button>
+                <div class="footer-links">
+                    <h3>Policies</h3>
+                    <ul>
+                        <li><a href="terminos.html#privacidad" target="_blank">Privacy Policy</a></li>
+                        <li><a href="terminos.html" target="_blank">Terms of Service</a></li>
+                        <li><a href="terminos.html#garantia" target="_blank">Returns & Exchanges</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Join the SAECR Club</h3>
+                    <p>Get exclusive deals and early access to upcoming drops.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class='bx bx-right-arrow-alt'></i></button>
+                    </form>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SAECR. All rights reserved.</p>
+            </div>
+            <!-- Side Shopping Cart Drawer -->
+            <div class="cart-overlay" id="cart-overlay"></div>
+            <aside class="cart-drawer" id="cart-drawer">
+                <div class="cart-drawer-header">
+                    <h3><i class='bx bx-shopping-bag'></i> My Cart (<span id="cart-drawer-count">2</span>)</h3>
+                    <button class="close-cart-btn" id="close-cart"><i class='bx bx-x'></i></button>
+                </div>
 
-            <script src="script.js"></script>
+                <div class="cart-drawer-items" id="cart-drawer-items">
+                    <!-- Item 1 -->
+                    <div class="cart-item">
+                        <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg"
+                                alt="Noir Element Jacket" class="cart-item-img"></a>
+                        <div class="cart-item-details">
+                            <span class="cart-item-category">Urban Collection</span>
+                            <h4 class="cart-item-title"><a href="producto.html">Noir Element Jacket</a></h4>
+                            <span class="cart-item-meta">Size: <strong>M</strong> | Color: <strong>Noir
+                                    Black</strong></span>
+                            <span class="cart-item-meta">Ref: #SAE-811</span>
+                            <div class="cart-item-price-row">
+                                <span class="cart-item-price">$120.00</span>
+                                <div class="cart-item-qty">
+                                    <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                                    <span class="item-qty">1</span>
+                                    <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                                </div>
+                            </div>
+                            <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> View
+                                full details</a>
+                        </div>
+                        <button class="remove-item-btn" title="Remove"><i class='bx bx-trash'></i></button>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="cart-item">
+                        <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg"
+                                alt="Essential White Tee" class="cart-item-img"></a>
+                        <div class="cart-item-details">
+                            <span class="cart-item-category">SAECR Basics</span>
+                            <h4 class="cart-item-title"><a href="producto.html">Essential White Tee</a></h4>
+                            <span class="cart-item-meta">Size: <strong>L</strong> | Color: <strong>Ivory
+                                    White</strong></span>
+                            <span class="cart-item-meta">Ref: #SAE-92c</span>
+                            <div class="cart-item-price-row">
+                                <span class="cart-item-price">$45.00</span>
+                                <div class="cart-item-qty">
+                                    <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                                    <span class="item-qty">1</span>
+                                    <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                                </div>
+                            </div>
+                            <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> View
+                                full details</a>
+                        </div>
+                        <button class="remove-item-btn" title="Remove"><i class='bx bx-trash'></i></button>
+                    </div>
+                </div>
+
+                <div class="cart-drawer-footer">
+                    <!-- Cart Coupon Application Box -->
+                    <div class="cart-coupon-box">
+                        <div class="active-coupon-badge hidden" id="active-coupon-badge">
+                            <div class="coupon-badge-info">
+                                <i class='bx bxs-coupon'></i>
+                                <span>Coupon <strong id="applied-coupon-name">SAECR15</strong> Applied!</span>
+                            </div>
+                            <button type="button" class="remove-coupon-btn" id="remove-coupon-btn"
+                                title="Remove Coupon"><i class='bx bx-x'></i></button>
+                        </div>
+                        <div class="coupon-input-row" id="coupon-input-row">
+                            <input type="text" id="cart-coupon-input" placeholder="Promo / Coupon Code">
+                            <button type="button" class="btn btn-primary btn-sm" id="apply-coupon-btn">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="cart-summary-line">
+                        <span>Subtotal</span>
+                        <strong id="cart-subtotal">$165.00</strong>
+                    </div>
+                    <div class="cart-summary-line discount-line hidden" id="cart-discount-line">
+                        <span>Discount (<span id="discount-label">15% OFF</span>)</span>
+                        <span class="discount-amount-tag" id="cart-discount-amount">-$24.75</span>
+                    </div>
+                    <div class="cart-summary-line">
+                        <span>Shipping</span>
+                        <span class="free-shipping-tag">Free</span>
+                    </div>
+                    <div class="cart-summary-line total-line">
+                        <span>Total</span>
+                        <strong id="cart-final-total">$165.00</strong>
+                    </div>
+                    <p class="cart-tax-notice">Taxes calculated at checkout.</p>
+
+                    <button class="btn btn-primary checkout-btn">Proceed to Checkout <i
+                            class='bx bx-right-arrow-alt'></i></button>
+                    <a href="catalogo.html" class="continue-shopping">Continue Shopping</a>
+                </div>
+                <!-- Login & Register Modal -->
+                <div class="modal-overlay" id="auth-modal-overlay"></div>
+                <div class="auth-modal" id="auth-modal">
+                    <div class="modal-header">
+                        <h3><i class='bx bx-user-circle'></i> Customer Account</h3>
+                        <button class="modal-close-btn" id="close-auth-modal"><i class='bx bx-x'></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="auth-tabs">
+                            <button type="button" class="auth-tab-btn active" data-auth-tab="login-form">Sign
+                                In</button>
+                            <button type="button" class="auth-tab-btn" data-auth-tab="register-form">Create
+                                Account</button>
+                        </div>
+
+                        <!-- Login Form -->
+                        <div class="auth-tab-pane active" id="login-form">
+                            <button type="button" class="btn btn-google" id="google-login-btn">
+                                <svg width="20" height="20" viewBox="0 0 18 18">
+                                    <path fill="#4285F4"
+                                        d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.617z" />
+                                    <path fill="#34A853"
+                                        d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
+                                    <path fill="#FBBC05"
+                                        d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
+                                    <path fill="#EA4335"
+                                        d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+                                </svg>
+                                <span>Continue with Google</span>
+                            </button>
+                            <div class="auth-divider"><span>or with your email</span></div>
+                            <form class="auth-form" id="login-form-element">
+                                <div class="input-group">
+                                    <label>Email Address</label>
+                                    <input type="email" placeholder="example@email.com" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Password</label>
+                                    <input type="password" placeholder="Your password" required>
+                                </div>
+                                <div class="auth-options-row">
+                                    <label class="remember-me">
+                                        <input type="checkbox" checked> Remember me
+                                    </label>
+                                    <a href="#" class="forgot-pass-link">Forgot password?</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary auth-submit-btn">Sign In to My
+                                    Account</button>
+                            </form>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div class="auth-tab-pane" id="register-form">
+                            <button type="button" class="btn btn-google" id="google-register-btn">
+                                <svg width="20" height="20" viewBox="0 0 18 18">
+                                    <path fill="#4285F4"
+                                        d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.617z" />
+                                    <path fill="#34A853"
+                                        d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
+                                    <path fill="#FBBC05"
+                                        d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
+                                    <path fill="#EA4335"
+                                        d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+                                </svg>
+                                <span>Sign up with Google</span>
+                            </button>
+                            <div class="auth-divider"><span>or complete your details</span></div>
+                            <form class="auth-form" id="register-form-element">
+                                <div class="input-group">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="Your full name" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Email Address</label>
+                                    <input type="email" placeholder="example@email.com" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Password</label>
+                                    <input type="password" placeholder="Minimum 8 characters" required>
+                                </div>
+                                <div class="auth-options-row">
+                                    <label class="remember-me">
+                                        <input type="checkbox" id="terms-checkbox" required disabled>
+                                        <span>I have read and agree to the <a href="#" class="terms-link"
+                                                id="open-terms-btn">Terms & Conditions</a></span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary auth-submit-btn">Create My Account</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions Modal -->
+                <div class="modal-overlay" id="terms-modal-overlay"></div>
+                <div class="terms-modal" id="terms-modal">
+                    <div class="modal-header">
+                        <h3><i class='bx bx-file'></i> SAECR Terms of Service</h3>
+                        <button class="modal-close-btn" id="close-terms-modal"><i class='bx bx-x'></i></button>
+                    </div>
+                    <div class="modal-body" id="terms-modal-body"
+                        style="max-height: 320px; overflow-y: auto; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; margin: 1.2rem 1.8rem;">
+                        <h4>1. Account Registration & Security</h4>
+                        <p>By registering on SAECR, you guarantee to provide truthful information for the accurate
+                            processing of your orders, purchases, and pre-order reservations. You are responsible for
+                            keeping your credentials safe.</p>
+
+                        <h4>2. Pre-Order & Reservation Policies</h4>
+                        <p>Purchases made under the <strong>Pre-Order</strong> category correspond to limited-edition
+                            boutique workshop garments. Estimated shipping dates are clearly displayed upon order
+                            confirmation.</p>
+
+                        <h4>3. Shipping & Satisfaction Guarantee</h4>
+                        <p>All shipments include real-time tracking. You have 30 continuous days following receipt to
+                            request size exchanges or returns at no additional management fee.</p>
+
+                        <h4>4. Data Protection & Privacy</h4>
+                        <p>Your personal details and financial transactions are encrypted and secured under strict
+                            256-bit SSL cybersecurity and PCI-DSS Level 1 international standards.</p>
+
+                        <h4>5. Mandatory Confirmation</h4>
+                        <p>By clicking the acceptance button at the bottom of this document, you confirm that you have
+                            read this agreement in full and consent to comply with SAECR policies.</p>
+                    </div>
+                    <div class="modal-footer"
+                        style="padding: 1.2rem 1.8rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+                        <small id="scroll-prompt-text"
+                            style="color: var(--primary-color); font-size: 0.82rem; font-weight: 500;"><i
+                                class='bx bx-down-arrow-alt bx-bounce'></i> Scroll to the bottom to enable
+                            acceptance</small>
+                        <button type="button" class="btn btn-primary btn-sm" id="accept-terms-btn" disabled
+                            style="min-width: 170px; opacity: 0.5; cursor: not-allowed;"><i class='bx bx-lock-alt'></i>
+                            Accept Terms</button>
+                    </div>
+                </div>
+
+                <!-- Spin-to-Win Floating Button -->
+                <button class="wheel-floating-btn" id="open-wheel-btn">
+                    <i class='bx bx-gift bx-tada'></i>
+                    <span>Spin & Win OFF!</span>
+                </button>
+
+                <!-- Spin-to-Win Wheel Modal -->
+                <div class="modal-overlay" id="wheel-modal-overlay"></div>
+                <div class="wheel-modal" id="wheel-modal">
+                    <div class="wheel-modal-header">
+                        <h3><i class='bx bx-gift'></i> Spin to Win Discounts!</h3>
+                        <p>Spin the wheel to unlock your exclusive instant coupon code.</p>
+                    </div>
+
+                    <div class="wheel-bezel">
+                        <div class="wheel-led-ring">
+                            <span class="wheel-led" style="--i: 0;"></span>
+                            <span class="wheel-led" style="--i: 1;"></span>
+                            <span class="wheel-led" style="--i: 2;"></span>
+                            <span class="wheel-led" style="--i: 3;"></span>
+                            <span class="wheel-led" style="--i: 4;"></span>
+                            <span class="wheel-led" style="--i: 5;"></span>
+                            <span class="wheel-led" style="--i: 6;"></span>
+                            <span class="wheel-led" style="--i: 7;"></span>
+                            <span class="wheel-led" style="--i: 8;"></span>
+                            <span class="wheel-led" style="--i: 9;"></span>
+                            <span class="wheel-led" style="--i: 10;"></span>
+                            <span class="wheel-led" style="--i: 11;"></span>
+                        </div>
+                        <div class="wheel-container">
+                            <div class="wheel-pointer" id="modal-wheel-pointer"></div>
+                            <canvas id="wheel-canvas" width="900" height="900" class="wheel-canvas"></canvas>
+                            <button type="button" class="spin-center-btn" id="spin-btn">SPIN</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Victory Coupon Pop-up Modal -->
+                <div class="modal-overlay" id="win-modal-overlay"></div>
+                <div class="win-modal" id="win-modal">
+                    <div class="win-modal-header">
+                        <div class="win-trophy-icon"><i class='bx bx-trophy'></i></div>
+                        <h3>CONGRATULATIONS!</h3>
+                        <p>You spun and unlocked an exclusive SAECR discount coupon!</p>
+                    </div>
+                    <div class="win-modal-body">
+                        <div class="win-coupon-card">
+                            <span class="win-prize-title" id="win-prize-title">15% OFF YOUR ORDER</span>
+                            <div class="win-code-box">
+                                <span id="win-code-text">SAECR15</span>
+                            </div>
+                            <small><i class='bx bx-check-shield'></i> Valid for all items in catalog &
+                                pre-orders</small>
+                        </div>
+                        <div class="win-modal-actions">
+                            <button type="button" class="btn btn-primary btn-lg" id="apply-win-coupon-btn">
+                                <i class='bx bx-shopping-bag'></i> Apply to Cart & Shop Now
+                            </button>
+                            <button type="button" class="btn btn-outline" id="copy-win-code-btn">
+                                <i class='bx bx-copy'></i> Copy Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Celebration Confetti Overlay Canvas -->
+                <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+                <script src="script.js"></script>
 </body>
 
 </html>

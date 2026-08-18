@@ -25,6 +25,7 @@
                 <li><a href="index.html#inicio">Home</a></li>
                 <li><a href="index.html#ofertas">Offers</a></li>
                 <li><a href="catalogo.html">Catalog</a></li>
+                <li><a href="ruleta.html">Lucky Wheel</a></li>
                 <li><a href="tallas.html">Size Guide</a></li>
             </ul>
             <div class="nav-actions">
@@ -49,6 +50,7 @@
                         <ul class="dropdown-links">
                             <li><a href="perfil.html" class="active"><i class='bx bx-user'></i> My Profile</a></li>
                             <li><a href="perfil.html#pedidos"><i class='bx bx-package'></i> My Orders</a></li>
+                            <li><a href="perfil.html#cupones"><i class='bx bxs-coupon'></i> Discounts & Coupons</a></li>
                             <li><a href="perfil.html#wishlist"><i class='bx bx-heart'></i> Wishlist</a></li>
                             <li class="divider"></li>
                             <li><a href="#" id="logout-btn"><i class='bx bx-log-out'></i> Sign Out</a></li>
@@ -83,12 +85,13 @@
                     </div>
                     <h3>Alex Morgan</h3>
                     <span class="user-email">alex.morgan@email.com</span>
-                    <span class="member-badge"><i class='bx bx-check-circle'></i> Verified SAECR Member</span>
+                    <span class="member-badge"><i class='bx bx-check-circle'></i> Verified Account</span>
                 </div>
 
                 <ul class="profile-nav-tabs">
                     <li><button class="profile-tab-btn active" data-tab="tab-pedidos"><i class='bx bx-package'></i>
                             Order & Pre-Order History</button></li>
+                    <li><button class="profile-tab-btn" data-tab="tab-cupones"><i class='bx bxs-coupon'></i> Discounts & Coupons</button></li>
                     <li><button class="profile-tab-btn" data-tab="tab-wishlist"><i class='bx bx-heart'></i> My Wishlist
                             (4)</button></li>
                     <li><button class="profile-tab-btn" data-tab="tab-direcciones"><i class='bx bx-map'></i> Shipping Addresses</button></li>
@@ -418,6 +421,112 @@
                         <i class='bx bx-check-circle'></i> Settings saved successfully!
                     </div>
 
+                </div>
+
+                <!-- TAB 5: Discounts & Coupons -->
+                <div class="profile-tab-pane" id="tab-cupones">
+                    <div class="pane-header">
+                        <h2>My Discounts & Coupons</h2>
+                        <p>View your available discount codes, wheel rewards, and special promotional coupons.</p>
+                    </div>
+
+                    <div class="coupons-grid">
+                        <!-- Coupon 1 -->
+                        <div class="profile-coupon-card">
+                            <div class="coupon-card-header">
+                                <span class="coupon-tag active-badge"><i class='bx bx-check-circle'></i> Active</span>
+                                <span class="coupon-discount-value">15% OFF</span>
+                            </div>
+                            <div class="coupon-card-body">
+                                <h3>15% OFF Storewide</h3>
+                                <p>Valid for all catalog items and pre-order drops.</p>
+                                <div class="coupon-code-display">
+                                    <code>SAECR15</code>
+                                    <button type="button" class="btn btn-outline btn-sm copy-coupon-code" data-code="SAECR15">
+                                        <i class='bx bx-copy'></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="coupon-card-footer">
+                                <span><i class='bx bx-time-five'></i> Valid for 24h</span>
+                                <button type="button" class="btn btn-primary btn-sm apply-coupon-to-cart" data-code="SAECR15">
+                                    <i class='bx bx-shopping-bag'></i> Apply Code
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Coupon 2 -->
+                        <div class="profile-coupon-card">
+                            <div class="coupon-card-header">
+                                <span class="coupon-tag active-badge"><i class='bx bx-check-circle'></i> Active</span>
+                                <span class="coupon-discount-value">FREE SHIP</span>
+                            </div>
+                            <div class="coupon-card-body">
+                                <h3>Free Express Shipping</h3>
+                                <p>Zero delivery costs on international & local shipments.</p>
+                                <div class="coupon-code-display">
+                                    <code>FREESHIP</code>
+                                    <button type="button" class="btn btn-outline btn-sm copy-coupon-code" data-code="FREESHIP">
+                                        <i class='bx bx-copy'></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="coupon-card-footer">
+                                <span><i class='bx bx-package'></i> Storewide</span>
+                                <button type="button" class="btn btn-primary btn-sm apply-coupon-to-cart" data-code="FREESHIP">
+                                    <i class='bx bx-shopping-bag'></i> Apply Code
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Coupon 3 -->
+                        <div class="profile-coupon-card">
+                            <div class="coupon-card-header">
+                                <span class="coupon-tag active-badge"><i class='bx bx-check-circle'></i> Active</span>
+                                <span class="coupon-discount-value">20% OFF</span>
+                            </div>
+                            <div class="coupon-card-body">
+                                <h3>20% Order Discount</h3>
+                                <p>Special reward code valid for your next checkout.</p>
+                                <div class="coupon-code-display">
+                                    <code>SAECR20</code>
+                                    <button type="button" class="btn btn-outline btn-sm copy-coupon-code" data-code="SAECR20">
+                                        <i class='bx bx-copy'></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="coupon-card-footer">
+                                <span><i class='bx bx-purchase-tag-alt'></i> Special Discount</span>
+                                <button type="button" class="btn btn-primary btn-sm apply-coupon-to-cart" data-code="SAECR20">
+                                    <i class='bx bx-shopping-bag'></i> Apply Code
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Coupon 4 -->
+                        <div class="profile-coupon-card">
+                            <div class="coupon-card-header">
+                                <span class="coupon-tag active-badge"><i class='bx bx-check-circle'></i> Active</span>
+                                <span class="coupon-discount-value">25% OFF</span>
+                            </div>
+                            <div class="coupon-card-body">
+                                <h3>25% OFF Outerwear</h3>
+                                <p>Valid for Noir Jackets & Coats collection.</p>
+                                <div class="coupon-code-display">
+                                    <code>JACKET25</code>
+                                    <button type="button" class="btn btn-outline btn-sm copy-coupon-code" data-code="JACKET25">
+                                        <i class='bx bx-copy'></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="coupon-card-footer">
+                                <span><i class='bx bx-closet'></i> Outerwear Only</span>
+                                <button type="button" class="btn btn-primary btn-sm apply-coupon-to-cart" data-code="JACKET25">
+                                    <i class='bx bx-shopping-bag'></i> Apply Code
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </section>
@@ -791,6 +900,45 @@
             closeReceiptBtns.forEach(btn => {
                 btn.addEventListener('click', closeReceiptModal);
             });
+
+            // Profile Coupons Interactivity
+            document.querySelectorAll('.copy-coupon-code').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const code = btn.getAttribute('data-code');
+                    navigator.clipboard.writeText(code).then(() => {
+                        showToast(`Coupon code ${code} copied!`);
+                    });
+                });
+            });
+
+            document.querySelectorAll('.apply-coupon-to-cart').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const code = btn.getAttribute('data-code');
+                    localStorage.setItem('saecr_active_coupon', code);
+                    const couponInput = document.getElementById('cart-coupon-input');
+                    if (couponInput) couponInput.value = code;
+                    const applyBtn = document.getElementById('apply-coupon-btn');
+                    if (applyBtn) applyBtn.click();
+                    const cartDrawer = document.getElementById('cart-drawer');
+                    const cartOverlay = document.getElementById('cart-overlay');
+                    if (cartDrawer && cartOverlay) {
+                        cartDrawer.classList.add('open');
+                        cartOverlay.classList.add('open');
+                    }
+                    showToast(`Coupon ${code} applied to cart!`);
+                });
+            });
+
+            // Hash navigation handling for direct tab linking (e.g. perfil.html#cupones)
+            function checkHashTab() {
+                if (window.location.hash) {
+                    const hash = window.location.hash.replace('#', '');
+                    const targetTab = document.querySelector(`.profile-tab-btn[data-tab="tab-${hash}"]`);
+                    if (targetTab) targetTab.click();
+                }
+            }
+            checkHashTab();
+            window.addEventListener('hashchange', checkHashTab);
         </script>
 </body>
 

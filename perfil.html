@@ -116,7 +116,8 @@
                             </div>
                             <div class="order-header-right">
                                 <span class="order-id">#SAE-90412</span>
-                                <span class="order-status-badge status-preorder"><i class='bx bx-time-five'></i> Pre-Orden Confirmada (Envío: 15 Sept)</span>
+                                <span class="order-status-badge status-preorder"><i class='bx bx-time-five'></i>
+                                    Pre-Orden Confirmada (Envío: 15 Sept)</span>
                             </div>
                         </div>
 
@@ -186,7 +187,8 @@
                             </div>
                             <div class="order-header-right">
                                 <span class="order-id">#SAE-88319</span>
-                                <span class="order-status-badge status-delivered"><i class='bx bx-check-circle'></i> Entregado con Éxito</span>
+                                <span class="order-status-badge status-delivered"><i class='bx bx-check-circle'></i>
+                                    Entregado con Éxito</span>
                             </div>
                         </div>
                         <div class="order-card-body">
@@ -478,11 +480,11 @@
                 <p>Redefiniendo el minimalismo moderno con toques audaces.</p>
             </div>
             <div class="footer-links">
-                <h3>Enlaces Útiles</h3>
+                <h3>Políticas</h3>
                 <ul>
-                    <li><a href="index.html#inicio">Inicio</a></li>
-                    <li><a href="catalogo.html">Catálogo Completo</a></li>
-                    <li><a href="tallas.html">Guía de Tallas</a></li>
+                    <li><a href="terminos.html#privacidad" target="_blank">Política de Privacidad</a></li>
+                    <li><a href="terminos.html" target="_blank">Términos de Servicio</a></li>
+                    <li><a href="terminos.html#garantia" target="_blank">Cambios y Devoluciones</a></li>
                 </ul>
             </div>
             <div class="footer-bottom">
@@ -494,7 +496,8 @@
         <div class="receipt-modal" id="receipt-modal">
             <div class="receipt-modal-header">
                 <div>
-                    <h3><i class='bx bx-receipt'></i> Detalle de la Compra <span id="modal-order-id"><i class='bx bx-hash'></i> SAE-90412</span>
+                    <h3><i class='bx bx-receipt'></i> Detalle de la Compra <span id="modal-order-id"><i
+                                class='bx bx-hash'></i> SAE-90412</span>
                     </h3>
                     <span id="modal-order-date">Realizado el 18 de Agosto, 2026</span>
                 </div>
@@ -570,7 +573,126 @@
                 </div>
             </div>
             <div class="receipt-modal-footer" style="justify-content: flex-end;">
-                <button class="btn btn-primary btn-sm" id="close-receipt-btn" style="min-width: 140px;">Cerrar Detalle</button>
+                <button class="btn btn-primary btn-sm" id="close-receipt-btn" style="min-width: 140px;">Cerrar
+                    Detalle</button>
+            </div>
+        </div>
+
+        <!-- Login & Register Modal (Modal de Autenticación) -->
+        <div class="modal-overlay" id="auth-modal-overlay"></div>
+        <div class="auth-modal" id="auth-modal">
+            <div class="modal-header">
+                <h3><i class='bx bx-user-circle'></i> Acceso de Clientes</h3>
+                <button class="modal-close-btn" id="close-auth-modal"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button type="button" class="auth-tab-btn active" data-auth-tab="login-form">Iniciar Sesión</button>
+                    <button type="button" class="auth-tab-btn" data-auth-tab="register-form">Crear Cuenta</button>
+                </div>
+
+                <!-- Login Form -->
+                <div class="auth-tab-pane active" id="login-form">
+                    <button type="button" class="btn btn-google" id="google-login-btn">
+                        <svg width="20" height="20" viewBox="0 0 18 18">
+                            <path fill="#4285F4"
+                                d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.617z" />
+                            <path fill="#34A853"
+                                d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
+                            <path fill="#FBBC05"
+                                d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
+                            <path fill="#EA4335"
+                                d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+                        </svg>
+                        <span>Continuar con Google</span>
+                    </button>
+                    <div class="auth-divider"><span>o con tu correo</span></div>
+                    <form class="auth-form" id="login-form-element">
+                        <div class="input-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" placeholder="ejemplo@correo.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Contraseña</label>
+                            <input type="password" placeholder="Tu contraseña" required>
+                        </div>
+                        <div class="auth-options-row">
+                            <label class="remember-me">
+                                <input type="checkbox" checked> Recordarme
+                            </label>
+                            <a href="#" class="forgot-pass-link">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary auth-submit-btn">Ingresar a mi Cuenta</button>
+                    </form>
+                </div>
+
+                <!-- Register Form -->
+                <div class="auth-tab-pane" id="register-form">
+                    <button type="button" class="btn btn-google" id="google-register-btn">
+                        <svg width="20" height="20" viewBox="0 0 18 18">
+                            <path fill="#4285F4"
+                                d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.259h2.908c1.702-1.567 2.684-3.874 2.684-6.617z" />
+                            <path fill="#34A853"
+                                d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
+                            <path fill="#FBBC05"
+                                d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" />
+                            <path fill="#EA4335"
+                                d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" />
+                        </svg>
+                        <span>Registrarse con Google</span>
+                    </button>
+                    <div class="auth-divider"><span>o completa tus datos</span></div>
+                    <form class="auth-form" id="register-form-element">
+                        <div class="input-group">
+                            <label>Nombre Completo</label>
+                            <input type="text" placeholder="Tu nombre y apellido" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" placeholder="ejemplo@correo.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Contraseña</label>
+                            <input type="password" placeholder="Mínimo 8 caracteres" required>
+                        </div>
+                        <div class="auth-options-row">
+                            <label class="remember-me">
+                                <input type="checkbox" id="terms-checkbox" required disabled>
+                                <span>He leído y acepto los <a href="#" class="terms-link" id="open-terms-btn">Términos y Condiciones</a></span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary auth-submit-btn">Crear mi Cuenta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms & Conditions Modal (Modal de Términos y Condiciones) -->
+        <div class="modal-overlay" id="terms-modal-overlay"></div>
+        <div class="terms-modal" id="terms-modal">
+            <div class="modal-header">
+                <h3><i class='bx bx-file'></i> Términos y Condiciones del Servicio SAECR</h3>
+                <button class="modal-close-btn" id="close-terms-modal"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body" id="terms-modal-body" style="max-height: 320px; overflow-y: auto; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; margin: 1.2rem 1.8rem;">
+                <h4>1. Registro y Seguridad de la Cuenta</h4>
+                <p>Al registrarte en SAECR, garantizas proporcionar datos verídicos para el correcto procesamiento de tus pedidos, compras y reservas de pre-orden. Eres responsable del uso adecuado de tus credenciales.</p>
+
+                <h4>2. Políticas de Pre-Orden & Reservas</h4>
+                <p>Las compras realizadas bajo la modalidad de <strong>Pre-Orden</strong> corresponden a prendas exclusivas de confección limitada en taller. La fecha estimada de despacho se muestra al momento de confirmar el pedido.</p>
+
+                <h4>3. Envíos & Garantías de Satisfacción</h4>
+                <p>Todos nuestros envíos cuentan con número de seguimiento en tiempo real. Cuentas con 30 días posteriores a la recepción para cualquier cambio por talla o devolución sin costo de gestión.</p>
+
+                <h4>4. Protección de Datos & Privacidad</h4>
+                <p>Tus datos personales y transacciones financieras están encriptados y resguardados bajo estándares estrictos de ciberseguridad SSL de 256 bits.</p>
+
+                <h4>5. Confirmación Obligatoria</h4>
+                <p>Al hacer click en el botón de aceptación ubicado al final de este documento, confirmas haber leído este acuerdo en su totalidad y consientes el cumplimiento de las políticas de uso de SAECR.</p>
+            </div>
+            <div class="modal-footer" style="padding: 1.2rem 1.8rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+                <small id="scroll-prompt-text" style="color: var(--primary-color); font-size: 0.82rem; font-weight: 500;"><i class='bx bx-down-arrow-alt bx-bounce'></i> Desplaza hasta el final para habilitar la aceptación</small>
+                <button type="button" class="btn btn-primary btn-sm" id="accept-terms-btn" disabled style="min-width: 170px; opacity: 0.5; cursor: not-allowed;"><i class='bx bx-lock-alt'></i> Aceptar Términos</button>
             </div>
         </div>
 

@@ -270,6 +270,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    if (userBtn) {
+        userBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openAuthModal();
+        });
+    }
+
     if (closeAuthModalBtn) closeAuthModalBtn.addEventListener('click', closeAuthModal);
     if (authOverlay) authOverlay.addEventListener('click', closeAuthModal);
 
@@ -314,5 +321,83 @@ document.addEventListener('DOMContentLoaded', () => {
                 openAuthModal();
             }
         });
+    });
+
+    // --- Terms & Conditions Modal with Mandatory Scroll Logic ---
+    const openTermsBtns = document.querySelectorAll('#open-terms-btn');
+    const termsModal = document.getElementById('terms-modal');
+    const termsOverlay = document.getElementById('terms-modal-overlay');
+    const closeTermsBtns = document.querySelectorAll('#close-terms-modal, #terms-modal-overlay');
+    const termsModalBody = document.getElementById('terms-modal-body');
+    const acceptTermsBtn = document.getElementById('accept-terms-btn');
+    const scrollPromptText = document.getElementById('scroll-prompt-text');
+    const termsCheckboxes = document.querySelectorAll('#terms-checkbox');
+
+    function openTermsModal() {
+        if (termsModal && termsOverlay) {
+            termsModal.classList.add('open');
+            termsOverlay.classList.add('open');
+
+            if (termsModalBody) {
+                if (termsModalBody.scrollHeight <= termsModalBody.clientHeight + 10) {
+                    enableAcceptButton();
+                } else {
+                    termsModalBody.scrollTop = 0;
+                }
+            }
+        }
+    }
+
+    function closeTermsModal() {
+        if (termsModal && termsOverlay) {
+            termsModal.classList.remove('open');
+            termsOverlay.classList.remove('open');
+        }
+    }
+
+    function enableAcceptButton() {
+        if (acceptTermsBtn) {
+            acceptTermsBtn.disabled = false;
+            acceptTermsBtn.style.opacity = '1';
+            acceptTermsBtn.style.cursor = 'pointer';
+            acceptTermsBtn.innerHTML = "<i class='bx bx-check-circle'></i> He leído y Acepto";
+        }
+        if (scrollPromptText) {
+            scrollPromptText.innerHTML = "<i class='bx bx-check' style='color: #2b9348;'></i> ¡Has leído el documento completo!";
+            scrollPromptText.style.color = "#2b9348";
+        }
+    }
+
+    if (termsModalBody) {
+        termsModalBody.addEventListener('scroll', () => {
+            const isAtBottom = termsModalBody.scrollTop + termsModalBody.clientHeight >= termsModalBody.scrollHeight - 20;
+            if (isAtBottom) {
+                enableAcceptButton();
+            }
+        });
+    }
+
+    if (acceptTermsBtn) {
+        acceptTermsBtn.addEventListener('click', () => {
+            if (!acceptTermsBtn.disabled) {
+                termsCheckboxes.forEach(cb => {
+                    cb.disabled = false;
+                    cb.checked = true;
+                });
+                closeTermsModal();
+                showToast('¡Términos y condiciones aceptados correctamente!');
+            }
+        });
+    }
+
+    openTermsBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openTermsModal();
+        });
+    });
+
+    closeTermsBtns.forEach(btn => {
+        btn.addEventListener('click', closeTermsModal);
     });
 });

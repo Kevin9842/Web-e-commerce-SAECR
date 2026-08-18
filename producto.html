@@ -48,13 +48,27 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobile-menu">
-        <ul class="mobile-links">
-            <li><a href="index.html#inicio">Home</a></li>
-            <li><a href="index.html#ofertas">Offers</a></li>
-            <li><a href="catalogo.html">Catalog</a></li>
-            <li><a href="ruleta.html"><i class='bx bx-gift'></i> Lucky Wheel</a></li>
-            <li><a href="tallas.html">Size Guide</a></li>
-        </ul>
+        <div class="mobile-menu-container">
+            <ul class="mobile-links">
+                <li><a href="index.html#inicio"><span class="link-label"><i class='bx bx-home-alt'></i> Home</span><i class='bx bx-chevron-right arrow-icon'></i></a></li>
+                <li><a href="index.html#ofertas"><span class="link-label"><i class='bx bx-purchase-tag-alt'></i> Offers</span><i class='bx bx-chevron-right arrow-icon'></i></a></li>
+                <li><a href="catalogo.html"><span class="link-label"><i class='bx bx-grid-alt'></i> Catalog</span><i class='bx bx-chevron-right arrow-icon'></i></a></li>
+                <li><a href="ruleta.html"><span class="link-label"><i class='bx bx-gift'></i> Lucky Wheel</span><i class='bx bx-chevron-right arrow-icon'></i></a></li>
+                <li><a href="tallas.html"><span class="link-label"><i class='bx bx-ruler'></i> Size Guide</span><i class='bx bx-chevron-right arrow-icon'></i></a></li>
+            </ul>
+
+            <div class="mobile-menu-footer">
+                <a href="perfil.html" class="mobile-account-card">
+                    <i class='bx bx-user-circle'></i>
+                    <div class="account-card-info">
+                        <strong>My Account</strong>
+                        <span>Orders, Discounts & Wishlist</span>
+                    </div>
+                    <i class='bx bx-chevron-right'></i>
+                </a>
+                <div class="mobile-brand-tag">SÆCR — Urban Gothic Streetwear</div>
+            </div>
+        </div>
     </div>
 
     <!-- Product Detail Container -->
@@ -191,62 +205,7 @@
                 </div>
             </div>
 
-            <!-- Related Products -->
-            <section class="related-products-section">
-                <h2 class="section-title">You Might Also Like</h2>
-                <div class="product-grid catalog-grid-layout" style="margin-top: 2rem;">
-                    <!-- Product Card -->
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg"
-                                    alt="Essential White Tee" class="product-img"></a>
-                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Add to Cart</button>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name"><a href="producto.html">Essential White Tee</a></h3>
-                            <p class="product-price">$45.00</p>
-                        </div>
-                    </div>
-                    <!-- Product Card -->
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <a href="producto.html"><img src="img/ae776e731c3643b9effc28e7f2017b68.jpg"
-                                    alt="Crimson Cargo Pants" class="product-img"></a>
-                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Add to Cart</button>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name"><a href="producto.html">Crimson Cargo Pants</a></h3>
-                            <p class="product-price">$72.00</p>
-                        </div>
-                    </div>
-                    <!-- Product Card -->
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <a href="producto.html"><img src="img/bb1aa6fafc914b858361d48c7322bf22.jpg"
-                                    alt="Velvet Red Hoodie" class="product-img"></a>
-                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Add to Cart</button>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name"><a href="producto.html">Velvet Red Hoodie</a></h3>
-                            <p class="product-price">$85.00</p>
-                        </div>
-                    </div>
-                    <!-- Product Card -->
-                    <div class="product-card">
-                        <div class="product-image-wrapper">
-                            <a href="producto.html"><img src="img/489f96b5937737e738f3c1789f232bcb.jpg"
-                                    alt="Italian Cut Coat" class="product-img"></a>
-                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Add to Cart</button>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name"><a href="producto.html">Italian Cut Coat</a></h3>
-                            <p class="product-price">$160.00</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Customer Reviews & Comments Section -->
+            <!-- Customer Reviews & Comments Section (Placed First) -->
             <section class="detail-reviews-section" id="resenas">
                 <div class="section-header center">
                     <h2 class="section-title">Customer Reviews & Ratings</h2>
@@ -336,26 +295,73 @@
                     </div>
                 </div>
 
-                <!-- Add Review Form -->
-                <div class="write-review-box">
-                    <h3>Leave Your Review</h3>
-                    <form class="review-form">
-                        <div class="form-row">
-                            <input type="text" placeholder="Your Name" required>
-                            <input type="email" placeholder="Your Email Address" required>
+                <!-- Write Review Action Card (Requires Sign In) -->
+                <div class="write-review-prompt-card">
+                    <div class="prompt-text">
+                        <i class='bx bx-message-square-edit'></i>
+                        <div>
+                            <h3>Have you purchased this garment?</h3>
+                            <p>Sign in to your SÆCR account to post a verified customer review.</p>
                         </div>
-                        <div class="form-row">
-                            <select required>
-                                <option value="">Select Your Rating</option>
-                                <option value="5">5 Stars - Excellent</option>
-                                <option value="4">4 Stars - Very Good</option>
-                                <option value="3">3 Stars - Average</option>
-                            </select>
+                    </div>
+                    <a href="perfil.html" class="btn btn-outline" id="open-review-btn">
+                        <i class='bx bx-edit'></i> Write a Review
+                    </a>
+                </div>
+            </section>
+
+            <!-- Related Products (Placed at the Bottom) -->
+            <section class="related-products-section" style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border-color);">
+                <h2 class="section-title">You Might Also Like</h2>
+                <div class="product-grid catalog-grid-layout" style="margin-top: 2rem;">
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg"
+                                    alt="Essential White Tee" class="product-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Add to Cart</button>
                         </div>
-                        <textarea rows="4" placeholder="Write your review or feedback about this garment..."
-                            required></textarea>
-                        <button type="submit" class="btn btn-primary">Submit Review</button>
-                    </form>
+                        <div class="product-info">
+                            <h3 class="product-name"><a href="producto.html">Essential White Tee</a></h3>
+                            <p class="product-price">$45.00</p>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/ae776e731c3643b9effc28e7f2017b68.jpg"
+                                    alt="Crimson Cargo Pants" class="product-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Add to Cart</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name"><a href="producto.html">Crimson Cargo Pants</a></h3>
+                            <p class="product-price">$72.00</p>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/bb1aa6fafc914b858361d48c7322bf22.jpg"
+                                    alt="Velvet Red Hoodie" class="product-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Add to Cart</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name"><a href="producto.html">Velvet Red Hoodie</a></h3>
+                            <p class="product-price">$85.00</p>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/489f96b5937737e738f3c1789f232bcb.jpg"
+                                    alt="Italian Cut Coat" class="product-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Add to Cart</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name"><a href="producto.html">Italian Cut Coat</a></h3>
+                            <p class="product-price">$160.00</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

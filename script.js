@@ -765,4 +765,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (openWheelBtn) openWheelBtn.addEventListener('click', openWheelModal);
     if (closeWheelBtn) closeWheelBtn.addEventListener('click', closeWheelModal);
     if (wheelOverlay) wheelOverlay.addEventListener('click', closeWheelModal);
+
+    // Profile Dashboard Tab Switching Logic
+    const profileTabBtns = document.querySelectorAll('.profile-tab-btn');
+    const profileTabPanes = document.querySelectorAll('.profile-tab-pane');
+
+    if (profileTabBtns.length > 0) {
+        profileTabBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetTab = btn.getAttribute('data-tab');
+
+                profileTabBtns.forEach(b => b.classList.remove('active'));
+                profileTabPanes.forEach(pane => pane.classList.remove('active'));
+
+                btn.classList.add('active');
+                const activePane = document.getElementById(targetTab);
+                if (activePane) {
+                    activePane.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // Toggle Order Tracking Box
+    const trackingBtns = document.querySelectorAll('.toggle-tracking-btn');
+    if (trackingBtns.length > 0) {
+        trackingBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('data-target');
+                const trackingBox = document.getElementById(targetId);
+                if (trackingBox) {
+                    trackingBox.classList.toggle('open');
+                }
+            });
+        });
+    }
 });

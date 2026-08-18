@@ -14,27 +14,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Check local storage for theme preference
+    // Check local storage for theme preference (Default: Dark Mode for Urban Gothic aesthetic)
     const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') {
+    if (currentTheme !== 'light') {
         body.classList.add('dark-mode');
         body.classList.remove('light-mode');
-        themeToggle.innerHTML = "<i class='bx bx-sun'></i>";
+        if (themeToggle) themeToggle.innerHTML = "<i class='bx bx-sun'></i>";
+    } else {
+        body.classList.add('light-mode');
+        body.classList.remove('dark-mode');
+        if (themeToggle) themeToggle.innerHTML = "<i class='bx bx-moon'></i>";
     }
 
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        body.classList.toggle('light-mode');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
 
-        let theme = 'light';
-        if (body.classList.contains('dark-mode')) {
-            theme = 'dark';
-            themeToggle.innerHTML = "<i class='bx bx-sun'></i>";
-        } else {
-            themeToggle.innerHTML = "<i class='bx bx-moon'></i>";
-        }
-        localStorage.setItem('theme', theme);
-    });
+            let theme = 'light';
+            if (body.classList.contains('dark-mode')) {
+                theme = 'dark';
+                themeToggle.innerHTML = "<i class='bx bx-sun'></i>";
+            } else {
+                themeToggle.innerHTML = "<i class='bx bx-moon'></i>";
+            }
+            localStorage.setItem('theme', theme);
+        });
+    }
 
     // --- Mobile Menu Toggle ---
     const mobileToggle = document.getElementById('mobile-toggle');

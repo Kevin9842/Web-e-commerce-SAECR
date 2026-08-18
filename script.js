@@ -360,10 +360,10 @@ document.addEventListener('DOMContentLoaded', () => {
             acceptTermsBtn.disabled = false;
             acceptTermsBtn.style.opacity = '1';
             acceptTermsBtn.style.cursor = 'pointer';
-            acceptTermsBtn.innerHTML = "<i class='bx bx-check-circle'></i> He leído y Acepto";
+            acceptTermsBtn.innerHTML = "<i class='bx bx-check-circle'></i> I Have Read and Agree";
         }
         if (scrollPromptText) {
-            scrollPromptText.innerHTML = "<i class='bx bx-check' style='color: #2b9348;'></i> ¡Has leído el documento completo!";
+            scrollPromptText.innerHTML = "<i class='bx bx-check' style='color: #2b9348;'></i> You have read the full document!";
             scrollPromptText.style.color = "#2b9348";
         }
     }
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     cb.checked = true;
                 });
                 closeTermsModal();
-                showToast('¡Términos y condiciones aceptados correctamente!');
+                showToast('Terms & conditions accepted successfully!');
             }
         });
     }

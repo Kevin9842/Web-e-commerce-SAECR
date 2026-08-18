@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update product count label
         if (productCount) {
-            productCount.textContent = `Mostrando ${visibleCount} prenda${visibleCount !== 1 ? 's' : ''}`;
+            productCount.textContent = `Showing ${visibleCount} item${visibleCount !== 1 ? 's' : ''}`;
         }
 
         // Show/Hide No Results message

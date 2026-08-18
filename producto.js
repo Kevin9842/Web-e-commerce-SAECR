@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Helper function for button click animation and feedback
     function triggerBtnAnimation(btn, originalHTML) {
         btn.classList.add('btn-clicked');
-        btn.innerHTML = `<i class='bx bx-check'></i> ¡Añadido!`;
+        btn.innerHTML = `<i class='bx bx-check'></i> Added!`;
         
         setTimeout(() => {
             btn.classList.remove('btn-clicked');

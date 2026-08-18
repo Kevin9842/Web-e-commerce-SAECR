@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAECR | Chaqueta Noir Element</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAECR</a>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#ofertas">Ofertas</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="tallas.html">Guía de Tallas</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                    <i class='bx bx-moon'></i>
+                </button>
+                <button class="icon-btn cart-toggle-btn" aria-label="Carrito" id="cart-toggle">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count-badge" id="cart-badge">2</span>
+                </button>
+                <a href="perfil.html" class="icon-btn" id="user-btn" title="Mi Cuenta / Iniciar Sesión">
+                    <i class='bx bx-user'></i>
+                </a>
+                <button class="icon-btn mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#ofertas">Ofertas</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="tallas.html">Guía de Tallas</a></li>
+        </ul>
+    </div>
+
+    <!-- Product Detail Container -->
+    <main class="section product-detail-section">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="index.html">Inicio</a> <i class='bx bx-chevron-right'></i>
+                <a href="catalogo.html">Catálogo</a> <i class='bx bx-chevron-right'></i>
+                <span>Chaqueta Noir Element</span>
+            </div>
+
+            <div class="product-detail-layout">
+                <!-- Left: Image Gallery -->
+                <div class="product-gallery">
+                    <div class="main-gallery-image">
+                        <img id="main-product-img" src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element">
+                        <div class="product-badges">
+                            <span class="badge badge-new">Edición Limitada</span>
+                            <span class="badge badge-preorder"><i class='bx bx-time-five'></i> Pre-Orden Disponible</span>
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img class="thumb-img active" src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Vista 1">
+                        <img class="thumb-img" src="img/6410aaca8434f0db8516faca33340e44.jpg" alt="Vista 2">
+                        <img class="thumb-img" src="img/489f96b5937737e738f3c1789f232bcb.jpg" alt="Vista 3">
+                    </div>
+                </div>
+
+                <!-- Right: Product Purchase Info -->
+                <div class="product-summary">
+                    <span class="product-category-tag">Colección Urbana</span>
+                    <h1 class="detail-product-title">Chaqueta Noir Element</h1>
+
+                    <div class="detail-product-rating">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                        </div>
+                        <span class="rating-text">4.9 (28 valoraciones)</span>
+                    </div>
+
+                    <div class="detail-price-box">
+                        <span class="detail-price">$120.00</span>
+                        <span class="stock-status preorder-stock"><i class='bx bx-time-five'></i> Sin Stock Inmediato (Disponible en Pre-Orden)</span>
+                    </div>
+
+                    <!-- Pre-Order Notice Banner -->
+                    <div class="preorder-notice-box">
+                        <div class="preorder-notice-header">
+                            <i class='bx bx-time-five'></i>
+                            <strong>Opción de Reserva / Pre-Orden</strong>
+                        </div>
+                        <p>Reserva tu prenda antes del próximo lote y obtén un <strong>15% de descuento adicional</strong>. Fecha estimada de envío: <strong>15 a 20 de Septiembre</strong>.</p>
+                    </div>
+
+                    <p class="detail-description">
+                        Confeccionada con algodón denso de estructura moderna y detalles de costura sutiles en tono carmesí. Silueta relajada de gran confort diseñada para destacar en cualquier ocasión.
+                    </p>
+
+                    <!-- Color Selector -->
+                    <div class="option-group">
+                        <label class="option-label">Color: <strong id="selected-color">Negro Noir</strong></label>
+                        <div class="color-options">
+                            <button class="color-swatch active" data-color="Negro Noir" style="background-color: #111;"></button>
+                            <button class="color-swatch" data-color="Rojo Carmesí" style="background-color: #d90429;"></button>
+                            <button class="color-swatch" data-color="Blanco Marfil" style="background-color: #f8f8f8; border: 1px solid #ccc;"></button>
+                        </div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div class="option-group">
+                        <div class="option-label-header">
+                            <label class="option-label">Talla: <strong id="selected-size">M</strong></label>
+                            <button type="button" class="size-guide-btn" id="open-size-modal"><i class='bx bx-ruler'></i> Guía de tallas</button>
+                        </div>
+                        <div class="size-options">
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn active" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                            <button class="size-btn" data-size="XL">XL</button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Purchase Actions -->
+                    <div class="purchase-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="qty-minus"><i class='bx bx-minus'></i></button>
+                            <input type="number" id="qty-input" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" id="qty-plus"><i class='bx bx-plus'></i></button>
+                        </div>
+
+                        <button class="btn btn-primary add-to-cart-large" id="detail-add-cart">
+                            <i class='bx bx-shopping-bag'></i> Añadir al Carrito
+                        </button>
+                        <button class="btn btn-preorder" id="detail-preorder-btn">
+                            <i class='bx bx-time-five'></i> Pre-Ordenar (-15%)
+                        </button>
+                    </div>
+
+                    <!-- Product Accordions -->
+                    <div class="product-accordions">
+                        <details class="accordion-item" open>
+                            <summary class="accordion-title">
+                                <span>Detalles & Composición</span>
+                                <i class='bx bx-chevron-down'></i>
+                            </summary>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Composición: 95% Algodón Premium, 5% Elastano.</li>
+                                    <li>Cierre frontal con broches de bronce mate ocultos.</li>
+                                    <li>Bolsillos laterales profundos con forro interior de seda suave.</li>
+                                    <li>Corte estructurado unisex.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details class="accordion-item">
+                            <summary class="accordion-title">
+                                <span>Envío & Devoluciones</span>
+                                <i class='bx bx-chevron-down'></i>
+                            </summary>
+                            <div class="accordion-content">
+                                <p>Envío estándar gratis en compras mayores a $100. Entregas estimadas de 2 a 4 días hábiles. Cambios y devoluciones sin costo en un plazo de 30 días.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <section class="related-products-section">
+                <h2 class="section-title">También te podría gustar</h2>
+                <div class="product-grid catalog-grid-layout" style="margin-top: 2rem;">
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Essential Blanca" class="product-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name"><a href="producto.html">Camiseta Essential Blanca</a></h3>
+                            <p class="product-price">$45.00</p>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/ae776e731c3643b9effc28e7f2017b68.jpg" alt="Pantalón Cargo Crimson" class="product-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name"><a href="producto.html">Pantalón Cargo Crimson</a></h3>
+                            <p class="product-price">$72.00</p>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/bb1aa6fafc914b858361d48c7322bf22.jpg" alt="Sudadera Velvet Red" class="product-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name"><a href="producto.html">Sudadera Velvet Red</a></h3>
+                            <p class="product-price">$85.00</p>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/489f96b5937737e738f3c1789f232bcb.jpg" alt="Abrigo Corte Italiano" class="product-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name"><a href="producto.html">Abrigo Corte Italiano</a></h3>
+                            <p class="product-price">$160.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Reviews & Comments Section (Placed Below Related Products) -->
+            <section class="detail-reviews-section" id="resenas">
+                <div class="section-header center">
+                    <h2 class="section-title">Valoraciones & Comentarios</h2>
+                    <p class="section-subtitle">Lo que dicen los clientes verificados sobre esta prenda.</p>
+                </div>
+
+                <div class="reviews-summary-wrapper">
+                    <div class="rating-overview-card">
+                        <span class="big-rating-number">4.9</span>
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                        </div>
+                        <span class="total-reviews-count">Basado en 28 opiniones</span>
+                    </div>
+
+                    <div class="rating-bars-box">
+                        <div class="bar-row">
+                            <span>5 Estrellas</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 88%;"></div></div>
+                            <span>88%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span>4 Estrellas</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 10%;"></div></div>
+                            <span>10%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span>3 Estrellas</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 2%;"></div></div>
+                            <span>2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Individual Customer Reviews List -->
+                <div class="reviews-list-container">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="user-avatar">CM</div>
+                            <div class="review-user-meta">
+                                <h4>Carlos M. <span class="verified-badge"><i class='bx bx-check-shield'></i> Compra Verificada</span></h4>
+                                <div class="stars small-stars">
+                                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                                </div>
+                            </div>
+                            <span class="review-date">Hace 3 días</span>
+                        </div>
+                        <p class="review-comment">"La chaqueta supera totalmente las expectativas. La textura del algodón denso se nota de altísima calidad y el corte queda muy elegante. El empaque llegó impecable."</p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="user-avatar">EG</div>
+                            <div class="review-user-meta">
+                                <h4>Elena G. <span class="verified-badge"><i class='bx bx-check-shield'></i> Compra Verificada</span></h4>
+                                <div class="stars small-stars">
+                                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                                </div>
+                            </div>
+                            <span class="review-date">Hace 1 semana</span>
+                        </div>
+                        <p class="review-comment">"Me basé en la guía de tallas de la web y la M me quedó perfecta. Los detalles rojos interiores le dan un toque audaz pero discreto."</p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="user-avatar">MR</div>
+                            <div class="review-user-meta">
+                                <h4>Marcos R. <span class="verified-badge"><i class='bx bx-check-shield'></i> Compra Verificada</span></h4>
+                                <div class="stars small-stars">
+                                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                                </div>
+                            </div>
+                            <span class="review-date">Hace 2 semanas</span>
+                        </div>
+                        <p class="review-comment">"Envío súper rápido a domicilio. El material se siente resistente y mantiene muy bien la forma tras lavarse."</p>
+                    </div>
+                </div>
+
+                <!-- Add Review Form -->
+                <div class="write-review-box">
+                    <h3>Déjanos tu Comentario</h3>
+                    <form class="review-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="Tu Nombre" required>
+                            <input type="email" placeholder="Tu Correo Electrónico" required>
+                        </div>
+                        <div class="form-row">
+                            <select required>
+                                <option value="">Selecciona tu Valoración</option>
+                                <option value="5">5 Estrellas - Excelente</option>
+                                <option value="4">4 Estrellas - Muy Bueno</option>
+                                <option value="3">3 Estrellas - Regular</option>
+                            </select>
+                        </div>
+                        <textarea rows="4" placeholder="Escribe tu comentario u opinión sobre la prenda..." required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Size Guide Quick Pop-up Modal -->
+    <div class="modal-overlay" id="size-modal-overlay"></div>
+    <div class="size-modal" id="size-modal">
+        <div class="modal-header">
+            <h3><i class='bx bx-ruler'></i> Guía & Tablas de Tallas SAECR</h3>
+            <button class="modal-close-btn" id="close-size-modal"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="modal-body">
+            <!-- Modal Category Tabs -->
+            <div class="modal-tabs">
+                <button type="button" class="modal-tab-btn active" data-tab="modal-top">Prendas Superiores (Chaquetas / Camisetas)</button>
+                <button type="button" class="modal-tab-btn" data-tab="modal-bottom">Prendas Inferiores (Pantalones / Shorts)</button>
+            </div>
+
+            <!-- Table 1: Tops -->
+            <div class="modal-tab-content active" id="modal-top">
+                <table class="modal-size-table">
+                    <thead>
+                        <tr>
+                            <th>Talla</th>
+                            <th>Pecho (cm)</th>
+                            <th>Cintura (cm)</th>
+                            <th>Hombro (cm)</th>
+                            <th>Largo (cm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>S</strong></td><td>90 - 94</td><td>76 - 80</td><td>44</td><td>68</td></tr>
+                        <tr><td><strong>M</strong></td><td>94 - 98</td><td>80 - 84</td><td>46</td><td>70</td></tr>
+                        <tr><td><strong>L</strong></td><td>98 - 104</td><td>84 - 90</td><td>48</td><td>72</td></tr>
+                        <tr><td><strong>XL</strong></td><td>104 - 110</td><td>90 - 96</td><td>50</td><td>74</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table 2: Bottoms -->
+            <div class="modal-tab-content" id="modal-bottom">
+                <table class="modal-size-table">
+                    <thead>
+                        <tr>
+                            <th>Talla Equiv.</th>
+                            <th>Cintura (cm)</th>
+                            <th>Cadera (cm)</th>
+                            <th>Largo Entrepierna (cm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>38 (S)</strong></td><td>76 - 80</td><td>92 - 96</td><td>102</td></tr>
+                        <tr><td><strong>40 (M)</strong></td><td>80 - 84</td><td>96 - 100</td><td>104</td></tr>
+                        <tr><td><strong>42 (L)</strong></td><td>84 - 88</td><td>100 - 104</td><td>106</td></tr>
+                        <tr><td><strong>44 (XL)</strong></td><td>88 - 92</td><td>104 - 108</td><td>108</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer-cta">
+                <p>¿Quieres usar la calculadora para obtener tu talla óptima por peso y estatura?</p>
+                <a href="tallas.html" class="btn btn-primary btn-sm"><i class='bx bx-calculator'></i> Ir a la Calculadora Completa</a>
+            </div>
+        </div>
+    </div>
+        </div>
+    </main>
+
+    <!-- Side Shopping Cart Drawer (Carrito de Compras Flotante) -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3><i class='bx bx-shopping-bag'></i> Mi Carrito (<span id="cart-drawer-count">2</span>)</h3>
+            <button class="close-cart-btn" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+
+        <div class="cart-drawer-items" id="cart-drawer-items">
+            <!-- Item 1 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element" class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Colección Urbana</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Chaqueta Noir Element</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>M</strong> | Color: <strong>Negro Noir</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-811</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$120.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> Ver detalle completo</a>
+                </div>
+                <button class="remove-item-btn" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Essential Blanca" class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Básicos SAECR</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Camiseta Essential Blanca</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>L</strong> | Color: <strong>Blanco Marfil</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-92c</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$45.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> Ver detalle completo</a>
+                </div>
+                <button class="remove-item-btn" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">$165.00</strong>
+            </div>
+            <div class="cart-summary-line">
+                <span>Envío</span>
+                <span class="free-shipping-tag">Gratis</span>
+            </div>
+            <p class="cart-tax-notice">Impuestos calculados en la pantalla de pago.</p>
+
+            <button class="btn btn-primary checkout-btn">Proceder al Pago <i class='bx bx-right-arrow-alt'></i></button>
+            <a href="catalogo.html" class="continue-shopping">Continuar Comprando</a>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="logo">SAECR</h2>
+                <p>Redefiniendo el minimalismo moderno con toques audaces.</p>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-tiktok'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="index.html#tallas">Guía de Tallas</a></li>
+                    <li><a href="#">Rastrea tu pedido</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Políticas</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Cambios y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Únete al Club SAECR</h3>
+                <p>Recibe ofertas exclusivas y acceso anticipado a nuevas colecciones.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit"><i class='bx bx-right-arrow-alt'></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SAECR. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="producto.js"></script>
+</body>
+</html>

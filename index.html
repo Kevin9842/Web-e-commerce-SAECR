@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAECR | Moda Premium</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Boxicons for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">SAECR</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="tallas.html">Guía de Tallas</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                    <i class='bx bx-moon'></i>
+                </button>
+                <button class="icon-btn cart-toggle-btn" aria-label="Carrito" id="cart-toggle">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count-badge">2</span>
+                </button>
+                <a href="perfil.html" class="icon-btn" id="user-btn" title="Mi Cuenta / Iniciar Sesión">
+                    <i class='bx bx-user'></i>
+                </a>
+                <!-- Mobile menu toggle -->
+                <button class="icon-btn mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#ofertas">Ofertas</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="tallas.html">Guía de Tallas</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Header / Brand Banner -->
+    <header id="inicio" class="hero-section hero-banner" style="background-image: url('img/489f96b5937737e738f3c1789f232bcb.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-up">
+            <span class="hero-badge">ESTILO & ALTA MODA</span>
+            <h1 class="hero-title">SAECR</h1>
+            <p class="hero-subtitle">Diseños vanguardistas de silueta minimalista y carácter audaz.</p>
+            <div class="hero-cta-group">
+                <a href="#ofertas" class="btn btn-primary">Ver Ofertas Destacadas <i class='bx bx-down-arrow-alt'></i></a>
+                <a href="#catalogo" class="btn btn-outline">Explorar Catálogo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee / Offers -->
+    <div class="offers-marquee">
+        <div class="marquee-content">
+            <span>ENVÍO GRATIS EN PEDIDOS SUPERIORES A $100</span>
+            <span class="dot">•</span>
+            <span>NUEVA COLECCIÓN DISPONIBLE</span>
+            <span class="dot">•</span>
+            <span>HASTA 40% DE DESCUENTO EN SELECCIONADOS</span>
+            <span class="dot">•</span>
+            <span>ENVÍO GRATIS EN PEDIDOS SUPERIORES A $100</span>
+            <span class="dot">•</span>
+            <span>NUEVA COLECCIÓN DISPONIBLE</span>
+        </div>
+    </div>
+
+    <!-- Offers Carousel Section (Baja de posición) -->
+    <section id="ofertas" class="section offers-carousel-section">
+        <div class="container">
+            <div class="section-header center fade-up-scroll">
+                <h2 class="section-title">Carrusel de Ofertas & Promociones</h2>
+                <p class="section-subtitle">Ediciones limitadas y descuentos especiales por tiempo limitado.</p>
+            </div>
+            
+            <div class="carousel-wrapper fade-up-scroll">
+                <div class="carousel-container">
+                    <div class="carousel-slide active" style="background-image: url('img/6410aaca8434f0db8516faca33340e44.jpg');">
+                        <div class="carousel-content">
+                            <span class="badge badge-sale">OFERTA ESPECIAL</span>
+                            <h2 class="slide-title">Colección Nocturna - 30% OFF</h2>
+                            <p class="slide-subtitle">Prendas exclusivas de edición limitada con envíos garantizados.</p>
+                            <a href="#catalogo" class="btn btn-primary">Ver Oferta</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide" style="background-image: url('img/ddde149b1134c4387cd174a99b8d2e31.jpg');">
+                        <div class="carousel-content">
+                            <span class="badge badge-new">TEMPORADA 2026</span>
+                            <h2 class="slide-title">Nuevos Lanzamientos Urbanos</h2>
+                            <p class="slide-subtitle">Combina estilo y comodidad con nuestros nuevos materiales seleccionados.</p>
+                            <a href="#catalogo" class="btn btn-primary">Explorar Ahora</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide" style="background-image: url('img/bbeba3902ab4b259335b31585e0369e6.jpg');">
+                        <div class="carousel-content">
+                            <span class="badge badge-sale">HASTA 40% DESCUENTO</span>
+                            <h2 class="slide-title">Paquetes & Outfits Completos</h2>
+                            <p class="slide-subtitle">Renueva tu armario con promociones exclusivas en la tienda online.</p>
+                            <a href="#catalogo" class="btn btn-primary">Obtener Descuento</a>
+                        </div>
+                    </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="catalogo" class="section products-section">
+        <div class="container">
+            <div class="section-header fade-up-scroll">
+                <h2 class="section-title">Prendas Destacadas</h2>
+                <a href="catalogo.html" class="view-all">Ver todo el catálogo <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card fade-up-scroll">
+                    <div class="product-image-wrapper">
+                        <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Premium" class="product-img main-img"></a>
+                        <div class="product-badges">
+                            <span class="badge badge-new">Nuevo</span>
+                        </div>
+                        <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name"><a href="producto.html">Chaqueta Noir Element</a></h3>
+                        <p class="product-price">$120.00</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card fade-up-scroll" style="transition-delay: 0.1s;">
+                    <div class="product-image-wrapper">
+                        <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Minimalista" class="product-img main-img"></a>
+                        <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name"><a href="producto.html">Camiseta Essential Blanca</a></h3>
+                        <p class="product-price">$45.00</p>
+                    </div>
+                </div>
+                <!-- Product 3 Placeholder -->
+                <div class="product-card fade-up-scroll" style="transition-delay: 0.2s;">
+                    <div class="product-image-wrapper">
+                        <a href="producto.html"><img src="img/ae776e731c3643b9effc28e7f2017b68.jpg" alt="Pantalón Cargo Crimson" class="product-img main-img"></a>
+                        <div class="product-badges">
+                            <span class="badge badge-sale">-20%</span>
+                        </div>
+                        <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name"><a href="producto.html">Pantalón Cargo Crimson</a></h3>
+                        <p class="product-price"><span class="old-price">$90.00</span> $72.00</p>
+                    </div>
+                </div>
+                 <!-- Product 4 Placeholder -->
+                 <div class="product-card fade-up-scroll" style="transition-delay: 0.3s;">
+                    <div class="product-image-wrapper">
+                        <a href="producto.html"><img src="img/bb1aa6fafc914b858361d48c7322bf22.jpg" alt="Sudadera Velvet Red" class="product-img main-img"></a>
+                        <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name"><a href="producto.html">Sudadera Velvet Red</a></h3>
+                        <p class="product-price">$85.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Section -->
+    <section id="tallas" class="section size-guide-section bg-secondary">
+        <div class="container">
+            <div class="section-header center fade-up-scroll">
+                <h2 class="section-title">Guía de Tallas</h2>
+                <p class="section-subtitle">Encuentra el ajuste perfecto para tu estilo.</p>
+            </div>
+            <div class="size-guide-container fade-up-scroll">
+                <div class="size-tabs">
+                    <button class="tab-btn active" data-target="superior">Prendas Superiores</button>
+                    <button class="tab-btn" data-target="inferior">Prendas Inferiores</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="size-table active" id="superior">
+                        <thead>
+                            <tr>
+                                <th>Talla</th>
+                                <th>Pecho (cm)</th>
+                                <th>Cintura (cm)</th>
+                                <th>Largo (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S</td><td>90 - 94</td><td>76 - 80</td><td>68</td></tr>
+                            <tr><td>M</td><td>94 - 98</td><td>80 - 84</td><td>70</td></tr>
+                            <tr><td>L</td><td>98 - 104</td><td>84 - 90</td><td>72</td></tr>
+                            <tr><td>XL</td><td>104 - 110</td><td>90 - 96</td><td>74</td></tr>
+                        </tbody>
+                    </table>
+                    <table class="size-table" id="inferior">
+                        <thead>
+                            <tr>
+                                <th>Talla</th>
+                                <th>Cintura (cm)</th>
+                                <th>Cadera (cm)</th>
+                                <th>Largo (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>38 (S)</td><td>76 - 80</td><td>92 - 96</td><td>102</td></tr>
+                            <tr><td>40 (M)</td><td>80 - 84</td><td>96 - 100</td><td>104</td></tr>
+                            <tr><td>42 (L)</td><td>84 - 88</td><td>100 - 104</td><td>106</td></tr>
+                            <tr><td>44 (XL)</td><td>88 - 92</td><td>104 - 108</td><td>108</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews-section">
+        <div class="container">
+            <div class="section-header center fade-up-scroll">
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card fade-up-scroll">
+                    <div class="stars">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                    </div>
+                    <p class="review-text">"La calidad de la chaqueta Noir Element es increíble. El detalle rojo en el forro interior es un toque espectacular."</p>
+                    <p class="review-author">— Carlos M.</p>
+                </div>
+                <div class="review-card fade-up-scroll" style="transition-delay: 0.1s;">
+                    <div class="stars">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                    </div>
+                    <p class="review-text">"Minimalismo en su máxima expresión. Las camisetas tienen un fit perfecto y la tela se siente verdaderamente premium."</p>
+                    <p class="review-author">— Alejandro T.</p>
+                </div>
+                <div class="review-card fade-up-scroll" style="transition-delay: 0.2s;">
+                    <div class="stars">
+                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                    </div>
+                    <p class="review-text">"Excelente servicio al cliente. Tuve una duda con mi talla y me guiaron perfecto usando la tabla de medidas."</p>
+                    <p class="review-author">— Sofia R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="logo">SAECR</h2>
+                <p>Redefiniendo el minimalismo moderno con toques audaces.</p>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-tiktok'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo Completo</a></li>
+                    <li><a href="#tallas">Guía de Tallas</a></li>
+                    <li><a href="#">Rastrea tu pedido</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Políticas</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Cambios y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Únete al Club SAECR</h3>
+                <p>Recibe ofertas exclusivas y acceso anticipado a nuevas colecciones.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit"><i class='bx bx-right-arrow-alt'></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SAECR. Todos los derechos reservados.</p>
+        </div>
+    <!-- Side Shopping Cart Drawer (Carrito de Compras Flotante) -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3><i class='bx bx-shopping-bag'></i> Mi Carrito (<span id="cart-drawer-count">2</span>)</h3>
+            <button class="close-cart-btn" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+
+        <div class="cart-drawer-items" id="cart-drawer-items">
+            <!-- Item 1 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element" class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Colección Urbana</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Chaqueta Noir Element</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>M</strong> | Color: <strong>Negro Noir</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-811</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$120.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> Ver detalle completo</a>
+                </div>
+                <button class="remove-item-btn" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Essential Blanca" class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Básicos SAECR</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Camiseta Essential Blanca</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>L</strong> | Color: <strong>Blanco Marfil</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-92c</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$45.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> Ver detalle completo</a>
+                </div>
+                <button class="remove-item-btn" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">$165.00</strong>
+            </div>
+            <div class="cart-summary-line">
+                <span>Envío</span>
+                <span class="free-shipping-tag">Gratis</span>
+            </div>
+            <p class="cart-tax-notice">Impuestos calculados en la pantalla de pago.</p>
+
+            <button class="btn btn-primary checkout-btn">Proceder al Pago <i class='bx bx-right-arrow-alt'></i></button>
+            <a href="catalogo.html" class="continue-shopping">Continuar Comprando</a>
+        </div>
+    <!-- Login & Register Modal (Modal de Autenticación) -->
+    <div class="modal-overlay" id="auth-modal-overlay"></div>
+    <div class="auth-modal" id="auth-modal">
+        <div class="modal-header">
+            <h3><i class='bx bx-user-circle'></i> Iniciar Sesión / Registro</h3>
+            <button class="modal-close-btn" id="close-auth-modal"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab-btn active" data-auth-tab="login-form">Iniciar Sesión</button>
+                <button type="button" class="auth-tab-btn" data-auth-tab="register-form">Crear Cuenta</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-tab-pane active" id="login-form">
+                <button type="button" class="btn btn-google" id="google-login-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google logo">
+                    Continuar con Google
+                </button>
+                <div class="auth-divider"><span>o con tu correo</span></div>
+                <form class="auth-form" id="login-form-element">
+                    <div class="input-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Contraseña</label>
+                        <input type="password" placeholder="Tu contraseña" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary auth-submit-btn">Ingresar a mi Cuenta</button>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-tab-pane" id="register-form">
+                <button type="button" class="btn btn-google" id="google-register-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google logo">
+                    Registrarse con Google
+                </button>
+                <div class="auth-divider"><span>o completa tus datos</span></div>
+                <form class="auth-form" id="register-form-element">
+                    <div class="input-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" placeholder="Tu nombre y apellido" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Contraseña</label>
+                        <input type="password" placeholder="Mínimo 8 caracteres" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary auth-submit-btn">Crear mi Cuenta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

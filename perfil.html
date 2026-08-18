@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAECR | Mi Perfil & Pedidos</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="light-mode">
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAECR</a>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#ofertas">Ofertas</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="tallas.html">Guía de Tallas</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                    <i class='bx bx-moon'></i>
+                </button>
+                <button class="icon-btn cart-toggle-btn" aria-label="Carrito" id="cart-toggle">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count-badge">2</span>
+                </button>
+
+                <!-- Profile Avatar Dropdown -->
+                <div class="user-profile-menu">
+                    <button class="profile-avatar-btn" id="user-profile-btn" aria-label="Perfil de usuario">
+                        <img src="img/ddde149b1134c4387cd174a99b8d2e31.jpg" alt="Foto de perfil" class="avatar-img">
+                    </button>
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <div class="dropdown-header">
+                            <strong>Alex Morgan</strong>
+                            <span>alex.morgan@email.com</span>
+                        </div>
+                        <ul class="dropdown-links">
+                            <li><a href="perfil.html" class="active"><i class='bx bx-user'></i> Mi Perfil</a></li>
+                            <li><a href="perfil.html#pedidos"><i class='bx bx-package'></i> Mis Pedidos</a></li>
+                            <li><a href="perfil.html#wishlist"><i class='bx bx-heart'></i> Mis Me Gusta</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" id="logout-btn"><i class='bx bx-log-out'></i> Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="icon-btn mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <header class="catalog-header-banner">
+        <div class="container">
+            <h1 class="catalog-header-title">MI CUENTA SAECR</h1>
+            <p class="catalog-header-subtitle">Gestiona tus pedidos, reservas en pre-orden y lista de deseos.</p>
+        </div>
+    </header>
+
+    <!-- Profile Dashboard Main Section -->
+    <main class="section profile-section">
+        <div class="container profile-layout">
+            <!-- Left Sidebar -->
+            <aside class="profile-sidebar">
+                <div class="user-card">
+                    <div class="user-avatar-large">
+                        <img src="img/ddde149b1134c4387cd174a99b8d2e31.jpg" alt="Alex Morgan">
+                        <button class="edit-avatar-btn" title="Cambiar foto"><i class='bx bx-camera'></i></button>
+                    </div>
+                    <h3>Alex Morgan</h3>
+                    <span class="user-email">alex.morgan@email.com</span>
+                    <span class="member-badge"><i class='bx bx-check-circle'></i> Cliente Verificado SAECR</span>
+                </div>
+
+                <ul class="profile-nav-tabs">
+                    <li><button class="profile-tab-btn active" data-tab="tab-pedidos"><i class='bx bx-package'></i>
+                            Historial de Pedidos & Pre-Órdenes</button></li>
+                    <li><button class="profile-tab-btn" data-tab="tab-wishlist"><i class='bx bx-heart'></i> Mis Me Gusta
+                            (4)</button></li>
+                    <li><button class="profile-tab-btn" data-tab="tab-direcciones"><i class='bx bx-map'></i> Direcciones
+                            de Envío</button></li>
+                    <li><button class="profile-tab-btn" data-tab="tab-ajustes"><i class='bx bx-slider-alt'></i> Ajustes
+                            de Cuenta</button></li>
+                </ul>
+            </aside>
+
+            <!-- Right Content Area -->
+            <section class="profile-content">
+
+                <!-- TAB 1: Pedidos & Pre-Órdenes -->
+                <div class="profile-tab-pane active" id="tab-pedidos">
+                    <div class="pane-header">
+                        <h2>Mis Pedidos & Reservas</h2>
+                        <p>Revisa el estado en tiempo real, el itinerario de entrega y la factura de cada pedido.</p>
+                    </div>
+
+                    <!-- Order Card 1: Pre-Order -->
+                    <div class="order-card">
+                        <div class="order-card-header">
+                            <div class="order-header-left">
+                                <span class="order-date"><i class='bx bx-calendar'></i> 18 de Agosto, 2026</span>
+                            </div>
+                            <div class="order-header-right">
+                                <span class="order-id">#SAE-90412</span>
+                                <span class="order-status-badge status-preorder"><i class='bx bx-time-five'></i> Pre-Orden Confirmada (Envío: 15 Sept)</span>
+                            </div>
+                        </div>
+
+                        <div class="order-card-body">
+                            <img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element"
+                                class="order-item-img">
+                            <div class="order-item-info">
+                                <h4>Chaqueta Noir Element</h4>
+                                <span>Talla: <strong>M</strong> | Color: <strong>Negro Noir</strong></span>
+                                <span class="order-price">$102.00 <small>(15% Desc. Pre-Orden)</small></span>
+                            </div>
+                            <div class="order-card-actions">
+                                <button class="btn btn-primary btn-sm toggle-tracking-btn" data-target="track-90412">
+                                    <i class='bx bx-map-pin'></i> Rastrear Pedido
+                                </button>
+                                <button class="btn btn-outline btn-sm open-receipt-btn" data-order="90412">
+                                    <i class='bx bx-receipt'></i> Detalles & Factura
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Expandable Tracking Progress Bar -->
+                        <div class="order-tracking-box open" id="track-90412">
+                            <div class="tracking-header">
+                                <span><i class='bx bx-radar'></i> Estado del Rastreo: <strong>En Lote de
+                                        Producción</strong></span>
+                                <span class="courier-ref">Guía FedEx: <strong>#FX-90412-MX</strong></span>
+                            </div>
+                            <div class="tracking-stepper">
+                                <div class="step completed">
+                                    <div class="step-icon"><i class='bx bx-check'></i></div>
+                                    <div class="step-label">
+                                        <strong>Pedido Recibido</strong>
+                                        <small>18 Ago, 08:30 AM</small>
+                                    </div>
+                                </div>
+                                <div class="step active">
+                                    <div class="step-icon"><i class='bx bx-cog'></i></div>
+                                    <div class="step-label">
+                                        <strong>Pre-Orden</strong>
+                                        <small>En Confección</small>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon"><i class='bx bx-truck'></i></div>
+                                    <div class="step-label">
+                                        <strong>En Tránsito</strong>
+                                        <small>Est. 12 Sept</small>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon"><i class='bx bx-home-alt'></i></div>
+                                    <div class="step-label">
+                                        <strong>Entregado</strong>
+                                        <small>Est. 15-20 Sept</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Card 2: Delivered -->
+                    <div class="order-card">
+                        <div class="order-card-header">
+                            <div class="order-header-left">
+                                <span class="order-date"><i class='bx bx-calendar'></i> 02 de Agosto, 2026</span>
+                            </div>
+                            <div class="order-header-right">
+                                <span class="order-id">#SAE-88319</span>
+                                <span class="order-status-badge status-delivered"><i class='bx bx-check-circle'></i> Entregado con Éxito</span>
+                            </div>
+                        </div>
+                        <div class="order-card-body">
+                            <img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Essential Blanca"
+                                class="order-item-img">
+                            <div class="order-item-info">
+                                <h4>Camiseta Essential Blanca</h4>
+                                <span>Talla: <strong>L</strong> | Color: <strong>Blanco Marfil</strong></span>
+                                <span class="order-price">$45.00</span>
+                            </div>
+                            <div class="order-card-actions">
+                                <button class="btn btn-outline btn-sm toggle-tracking-btn" data-target="track-88319">
+                                    <i class='bx bx-history'></i> Ver Historial
+                                </button>
+                                <button class="btn btn-outline btn-sm open-receipt-btn" data-order="88319">
+                                    <i class='bx bx-receipt'></i> Detalles & Factura
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Expandable Tracking Progress Bar (Delivered) -->
+                        <div class="order-tracking-box" id="track-88319">
+                            <div class="tracking-header">
+                                <span><i class='bx bx-check-circle'></i> Entregado el 05 de Agosto</span>
+                                <span class="courier-ref">Guía DHL: <strong>#DHL-88319-MX</strong></span>
+                            </div>
+                            <div class="tracking-stepper">
+                                <div class="step completed">
+                                    <div class="step-icon"><i class='bx bx-check'></i></div>
+                                    <div class="step-label">
+                                        <strong>Confirmado</strong>
+                                        <small>02 Ago</small>
+                                    </div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-icon"><i class='bx bx-check'></i></div>
+                                    <div class="step-label">
+                                        <strong>Empacado</strong>
+                                        <small>03 Ago</small>
+                                    </div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-icon"><i class='bx bx-check'></i></div>
+                                    <div class="step-label">
+                                        <strong>En Tránsito</strong>
+                                        <small>04 Ago</small>
+                                    </div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-icon"><i class='bx bx-check'></i></div>
+                                    <div class="step-label">
+                                        <strong>Entregado</strong>
+                                        <small>05 Ago, 02:15 PM</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: Wishlist / Me Gusta -->
+                <div class="profile-tab-pane" id="tab-wishlist">
+                    <div class="pane-header">
+                        <h2>Mis Prendas Guardadas ("Me Gusta")</h2>
+                        <p>Tus artículos favoritos guardados para comprar después.</p>
+                    </div>
+
+                    <div class="product-grid catalog-grid-layout" style="margin-top: 1.5rem;">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <a href="producto.html"><img src="img/ae776e731c3643b9effc28e7f2017b68.jpg"
+                                        alt="Pantalón Cargo Crimson" class="product-img"></a>
+                                <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name"><a href="producto.html">Pantalón Cargo Crimson</a></h3>
+                                <p class="product-price">$72.00</p>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <a href="producto.html"><img src="img/bb1aa6fafc914b858361d48c7322bf22.jpg"
+                                        alt="Sudadera Velvet Red" class="product-img"></a>
+                                <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name"><a href="producto.html">Sudadera Velvet Red</a></h3>
+                                <p class="product-price">$85.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: Direcciones -->
+                <div class="profile-tab-pane" id="tab-direcciones">
+                    <div class="pane-header">
+                        <h2>Direcciones de Envío</h2>
+                        <p>Administra las direcciones registradas para entregas rápidas.</p>
+                    </div>
+                    <div class="address-box">
+                        <div class="address-header">
+                            <h4><i class='bx bx-home-alt'></i> Dirección Principal</h4>
+                            <span class="badge badge-new">Predeterminada</span>
+                        </div>
+                        <p>Alex Morgan</p>
+                        <p>Av. Principal #450, Apto 8B</p>
+                        <p>Ciudad Central, CP 10234</p>
+                        <p>Teléfono: +52 55 9876 5432</p>
+                    </div>
+                </div>
+
+                <!-- TAB 4: Ajustes de Cuenta -->
+                <div class="profile-tab-pane" id="tab-ajustes">
+                    <div class="pane-header">
+                        <h2>Ajustes del Perfil</h2>
+                        <p>Personaliza tu foto, información personal, seguridad y preferencias de cuenta.</p>
+                    </div>
+
+                    <div class="settings-cards-wrapper">
+                        <!-- 1. Personal Information & Photo Customizer -->
+                        <div class="settings-card">
+                            <h3 class="settings-card-title"><i class='bx bx-user'></i> Información Personal & Foto de
+                                Perfil</h3>
+
+                            <!-- Avatar Photo Customizer -->
+                            <div class="avatar-edit-container">
+                                <div class="avatar-preview-box">
+                                    <img src="img/ddde149b1134c4387cd174a99b8d2e31.jpg" alt="Foto de perfil"
+                                        id="settings-avatar-preview">
+                                    <label for="avatar-file-input" class="upload-avatar-btn" title="Subir foto">
+                                        <i class='bx bx-camera'></i>
+                                    </label>
+                                    <input type="file" id="avatar-file-input" accept="image/*" style="display: none;">
+                                </div>
+                                <div class="avatar-edit-info">
+                                    <strong>Foto de Perfil</strong>
+                                    <p>Formatos permitidos: JPG, PNG o WEBP (Máx. 5MB).</p>
+                                    <div class="avatar-btns-group">
+                                        <label for="avatar-file-input" class="btn btn-outline btn-sm"><i
+                                                class='bx bx-upload'></i> Subir Nueva Foto</label>
+                                        <button type="button" class="btn btn-text btn-sm text-danger"
+                                            id="remove-avatar-btn"><i class='bx bx-trash'></i> Eliminar Foto</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="account-settings-form" id="personal-info-form">
+                                <div class="input-group">
+                                    <label>Nombre Completo</label>
+                                    <input type="text" value="Alex Morgan" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Nombre de Usuario</label>
+                                    <input type="text" value="@alexmorgan_saecr" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Correo Electrónico</label>
+                                    <input type="email" value="alex.morgan@email.com" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Teléfono Móvil</label>
+                                    <input type="tel" value="+52 55 9876 5432" placeholder="+52 55 0000 0000">
+                                </div>
+                                <button type="submit" class="btn btn-primary settings-submit-btn">Guardar Datos
+                                    Personales</button>
+                            </form>
+                        </div>
+
+                        <!-- 2. Security & Password -->
+                        <div class="settings-card">
+                            <h3 class="settings-card-title"><i class='bx bx-shield-quarter'></i> Seguridad & Clave de
+                                Acceso</h3>
+                            <form class="account-settings-form" id="security-form">
+                                <div class="input-group">
+                                    <label>Contraseña Actual</label>
+                                    <input type="password" placeholder="••••••••">
+                                </div>
+                                <div class="input-group">
+                                    <label>Nueva Contraseña</label>
+                                    <input type="password" placeholder="Mínimo 8 caracteres">
+                                </div>
+                                <div class="input-group">
+                                    <label>Confirmar Nueva Contraseña</label>
+                                    <input type="password" placeholder="Repite la nueva clave">
+                                </div>
+                                <button type="submit" class="btn btn-primary settings-submit-btn">Actualizar
+                                    Contraseña</button>
+                            </form>
+                        </div>
+
+                        <!-- 3. Connected Accounts -->
+                        <div class="settings-card">
+                            <h3 class="settings-card-title"><i class='bx bx-link-alt'></i> Cuentas Vinculadas</h3>
+                            <div class="connected-account-row">
+                                <div class="account-meta">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                                        alt="Google">
+                                    <div>
+                                        <strong>Google Account</strong>
+                                        <span>alex.morgan@gmail.com</span>
+                                    </div>
+                                </div>
+                                <span class="status-badge-connected"><i class='bx bx-check-circle'></i> Cuenta
+                                    Vinculada</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. Notification Preferences -->
+                        <div class="settings-card">
+                            <h3 class="settings-card-title"><i class='bx bx-bell'></i> Preferencias de Notificaciones
+                            </h3>
+                            <div class="checkbox-options-list">
+                                <label class="custom-checkbox-row">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-label-text">
+                                        <strong>Alertas de Pre-Orden & Nuevos Lanzamientos</strong>
+                                        <small>Recibe un correo de aviso inmediato cuando prendas sin stock o
+                                            colecciones nuevas estén disponibles.</small>
+                                    </span>
+                                </label>
+                                <label class="custom-checkbox-row">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-label-text">
+                                        <strong>Estado del Pedido & Seguimiento de Envío</strong>
+                                        <small>Rastreo y notificaciones en tiempo real del recorrido de tus
+                                            paquetes.</small>
+                                    </span>
+                                </label>
+                            </div>
+                            <button type="button" class="btn btn-primary settings-submit-btn"
+                                style="margin-top: 1.5rem;" id="save-notif-btn">Guardar Preferencias de
+                                Notificación</button>
+                        </div>
+                    </div>
+
+                    <!-- Settings Saved Toast Feedback -->
+                    <div class="settings-toast" id="settings-toast">
+                        <i class='bx bx-check-circle'></i> ¡Ajustes guardados correctamente!
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Side Shopping Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3><i class='bx bx-shopping-bag'></i> Mi Carrito (<span id="cart-drawer-count">2</span>)</h3>
+            <button class="close-cart-btn" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-drawer-items" id="cart-drawer-items">
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element"
+                        class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Colección Urbana</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Chaqueta Noir Element</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>M</strong> | Color: <strong>Negro Noir</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-811</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$120.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">$120.00</strong>
+            </div>
+            <button class="btn btn-primary checkout-btn">Proceder al Pago <i class='bx bx-right-arrow-alt'></i></button>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="logo">SAECR</h2>
+                <p>Redefiniendo el minimalismo moderno con toques audaces.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tallas.html">Guía de Tallas</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SAECR. Todos los derechos reservados.</p>
+            </div>
+        </div>
+        <!-- Order Receipt & Details Modal (Modal de Detalles del Pedido) -->
+        <div class="modal-overlay" id="receipt-modal-overlay"></div>
+        <div class="receipt-modal" id="receipt-modal">
+            <div class="receipt-modal-header">
+                <div>
+                    <h3><i class='bx bx-receipt'></i> Detalle de la Compra <span id="modal-order-id"><i class='bx bx-hash'></i> SAE-90412</span>
+                    </h3>
+                    <span id="modal-order-date">Realizado el 18 de Agosto, 2026</span>
+                </div>
+                <button class="modal-close-btn" id="close-receipt-modal"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="receipt-modal-body">
+
+                <!-- Enhanced Shipping & Payment Grid -->
+                <div class="receipt-grid-two">
+                    <!-- 1. Shipping Address -->
+                    <div class="receipt-card-info">
+                        <div class="receipt-card-header">
+                            <i class='bx bx-map-pin icon-box'></i>
+                            <div>
+                                <strong>Dirección de Entrega</strong>
+                                <small>Destino Registrado</small>
+                            </div>
+                        </div>
+                        <div class="receipt-card-details">
+                            <p class="user-name">Alex Morgan</p>
+                            <p>Av. Principal #450, Apto 8B</p>
+                            <p>Ciudad Central, CP 10234</p>
+                            <p class="contact-num"><i class='bx bx-phone'></i> +52 55 9876 5432</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Payment Method -->
+                    <div class="receipt-card-info">
+                        <div class="receipt-card-header">
+                            <i class='bx bx-credit-card-front icon-box'></i>
+                            <div>
+                                <strong>Método de Pago</strong>
+                                <small>Transacción Segura</small>
+                            </div>
+                        </div>
+                        <div class="receipt-card-details">
+                            <p class="payment-method-name">
+                                <i class='bx bxl-visa visa-icon'></i> Visa Débito
+                            </p>
+                            <p>Número: <strong>•••• •••• •••• 4242</strong></p>
+                            <p class="txn-ref">Transacción: <code>#TXN-9041288</code></p>
+                            <span class="pay-status-pill paid"><i class='bx bx-check-shield'></i> Pago Confirmado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Items Purchased Breakdown -->
+                <h4 class="receipt-subtitle"><i class='bx bx-package'></i> Prendas Compradas</h4>
+                <div class="receipt-items-list" id="modal-items-list">
+                    <div class="receipt-item-row">
+                        <img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element"
+                            class="receipt-item-img">
+                        <div class="receipt-item-meta">
+                            <strong>Chaqueta Noir Element</strong>
+                            <span>Talla: M | Color: Negro Noir</span>
+                            <span>SKU: #SAE-811-M-BLK</span>
+                        </div>
+                        <div class="receipt-item-price">
+                            <span>$120.00 x 1</span>
+                            <strong>$102.00</strong>
+                            <small class="discount-tag">-15% Desc. Pre-Orden</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Summary -->
+                <div class="receipt-summary-box">
+                    <div class="receipt-line"><span>Subtotal</span><span>$120.00</span></div>
+                    <div class="receipt-line"><span>Descuento Aplicado</span><span class="discount-text">-$18.00</span>
+                    </div>
+                    <div class="receipt-line"><span>Costo de Envío</span><span class="free-text">Gratis</span></div>
+                    <div class="receipt-line total-line"><span>Total Pagado</span><strong>$102.00</strong></div>
+                </div>
+            </div>
+            <div class="receipt-modal-footer" style="justify-content: flex-end;">
+                <button class="btn btn-primary btn-sm" id="close-receipt-btn" style="min-width: 140px;">Cerrar Detalle</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script>
+            // Profile Tab Switcher
+            document.querySelectorAll('.profile-tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.profile-tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.profile-tab-pane').forEach(p => p.classList.remove('active'));
+                    btn.classList.add('active');
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId)?.classList.add('active');
+                });
+            });
+
+            // Toast feedback trigger for settings
+            const settingsToast = document.getElementById('settings-toast');
+            function showToast(msg) {
+                if (settingsToast) {
+                    if (msg) settingsToast.innerHTML = `<i class='bx bx-check-circle'></i> ${msg}`;
+                    settingsToast.classList.add('show');
+                    setTimeout(() => {
+                        settingsToast.classList.remove('show');
+                    }, 3000);
+                }
+            }
+
+            document.querySelectorAll('.account-settings-form, #save-notif-btn').forEach(item => {
+                if (item.tagName === 'FORM') {
+                    item.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        showToast('¡Ajustes guardados correctamente!');
+                    });
+                } else {
+                    item.addEventListener('click', () => {
+                        showToast('¡Preferencias de notificación actualizadas!');
+                    });
+                }
+            });
+
+            // Live Avatar File Upload Preview
+            const avatarInput = document.getElementById('avatar-file-input');
+            const settingsPreview = document.getElementById('settings-avatar-preview');
+            const removeAvatarBtn = document.getElementById('remove-avatar-btn');
+
+            if (avatarInput) {
+                avatarInput.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                            if (settingsPreview) settingsPreview.src = event.target.result;
+                            // Also update sidebar avatar
+                            const sidebarAvatar = document.querySelector('.user-avatar-large img');
+                            if (sidebarAvatar) sidebarAvatar.src = event.target.result;
+                            showToast('¡Foto de perfil actualizada!');
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+
+            if (removeAvatarBtn) {
+                removeAvatarBtn.addEventListener('click', () => {
+                    const defaultAvatar = 'https://ui-avatars.com/api/?name=Alex+Morgan&background=111&color=fff';
+                    if (settingsPreview) settingsPreview.src = defaultAvatar;
+                    const sidebarAvatar = document.querySelector('.user-avatar-large img');
+                    if (sidebarAvatar) sidebarAvatar.src = defaultAvatar;
+                    showToast('Foto de perfil eliminada.');
+                });
+            }
+
+            // Toggle Live Tracking Accordion
+            document.querySelectorAll('.toggle-tracking-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-target');
+                    const targetBox = document.getElementById(targetId);
+                    if (targetBox) {
+                        targetBox.classList.toggle('open');
+                    }
+                });
+            });
+
+            // Receipt Details Modal Logic
+            const receiptModal = document.getElementById('receipt-modal');
+            const receiptOverlay = document.getElementById('receipt-modal-overlay');
+            const closeReceiptBtns = document.querySelectorAll('#close-receipt-modal, #close-receipt-btn, #receipt-modal-overlay');
+
+            function openReceiptModal() {
+                if (receiptModal && receiptOverlay) {
+                    receiptModal.classList.add('open');
+                    receiptOverlay.classList.add('open');
+                }
+            }
+
+            function closeReceiptModal() {
+                if (receiptModal && receiptOverlay) {
+                    receiptModal.classList.remove('open');
+                    receiptOverlay.classList.remove('open');
+                }
+            }
+
+            document.querySelectorAll('.open-receipt-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    openReceiptModal();
+                });
+            });
+
+            closeReceiptBtns.forEach(btn => {
+                btn.addEventListener('click', closeReceiptModal);
+            });
+        </script>
+</body>
+
+</html>

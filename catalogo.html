@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAECR | Catálogo Completo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAECR</a>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#ofertas">Ofertas</a></li>
+                <li><a href="catalogo.html" class="active">Catálogo</a></li>
+                <li><a href="tallas.html">Guía de Tallas</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                    <i class='bx bx-moon'></i>
+                </button>
+                <button class="icon-btn cart-toggle-btn" aria-label="Carrito" id="cart-toggle">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count-badge">2</span>
+                </button>
+                <a href="perfil.html" class="icon-btn" id="user-btn" title="Mi Cuenta / Iniciar Sesión">
+                    <i class='bx bx-user'></i>
+                </a>
+                <button class="icon-btn mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#ofertas">Ofertas</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="tallas.html">Guía de Tallas</a></li>
+        </ul>
+    </div>
+
+    <!-- Catalog Page Header -->
+    <header class="catalog-header-banner">
+        <div class="container">
+            <h1 class="catalog-header-title">COLECCIÓN COMPLETA</h1>
+            <p class="catalog-header-subtitle">Encuentra tus prendas exclusivas con diseño de alta calidad y detalles sutiles.</p>
+        </div>
+    </header>
+
+    <!-- Main Catalog Section with Sidebar -->
+    <main class="section catalog-main-section">
+        <div class="container catalog-layout">
+            
+            <!-- Sidebar Filters (Panel Lateral) -->
+            <aside class="catalog-sidebar">
+                <div class="sidebar-block">
+                    <h3 class="sidebar-title">Buscar</h3>
+                    <div class="search-box">
+                        <i class='bx bx-search search-icon'></i>
+                        <input type="text" id="catalog-search" placeholder="Buscar prenda...">
+                    </div>
+                </div>
+
+                <div class="sidebar-block">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <ul class="category-list" id="category-filters">
+                        <li>
+                            <button class="category-link active" data-category="todos">
+                                <span>Todas las prendas</span>
+                                <span class="category-count">15</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-link" data-category="chaquetas">
+                                <span>Chaquetas</span>
+                                <span class="category-count">5</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-link" data-category="camisetas">
+                                <span>Camisetas</span>
+                                <span class="category-count">4</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-link" data-category="pantalones">
+                                <span>Pantalones</span>
+                                <span class="category-count">3</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="category-link" data-category="sudaderas">
+                                <span>Sudaderas</span>
+                                <span class="category-count">3</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-block">
+                    <h3 class="sidebar-title">Filtro de Precio</h3>
+                    <div class="price-filter">
+                        <div class="price-range-labels">
+                            <span>Hasta: <strong id="price-value">$200</strong></span>
+                        </div>
+                        <input type="range" id="price-range" min="30" max="200" value="200" step="5">
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <section class="catalog-content">
+                <!-- Top Control Bar -->
+                <div class="catalog-top-bar">
+                    <span id="product-count" class="product-count">Mostrando 15 prendas</span>
+                    
+                    <div class="sort-box">
+                        <label for="sort-select"><i class='bx bx-sort-alt-2'></i> Ordenar:</label>
+                        <select id="sort-select">
+                            <option value="popular">Más Populares</option>
+                            <option value="low-high">Precio: Menor a Mayor</option>
+                            <option value="high-low">Precio: Mayor a Menor</option>
+                            <option value="name">Nombre: A - Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="product-grid catalog-grid-layout" id="catalog-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card catalog-item" data-category="chaquetas" data-name="chaqueta noir element" data-price="120">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element" class="product-img main-img"></a>
+                            <div class="product-badges">
+                                <span class="badge badge-new">Nuevo</span>
+                            </div>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Chaquetas</span>
+                            <h3 class="product-name"><a href="producto.html">Chaqueta Noir Element</a></h3>
+                            <p class="product-price">$120.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card catalog-item" data-category="camisetas" data-name="camiseta essential blanca" data-price="45">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Essential Blanca" class="product-img main-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Camisetas</span>
+                            <h3 class="product-name"><a href="producto.html">Camiseta Essential Blanca</a></h3>
+                            <p class="product-price">$45.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card catalog-item" data-category="pantalones" data-name="pantalon cargo crimson" data-price="72">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/ae776e731c3643b9effc28e7f2017b68.jpg" alt="Pantalón Cargo Crimson" class="product-img main-img"></a>
+                            <div class="product-badges">
+                                <span class="badge badge-sale">-20%</span>
+                            </div>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Pantalones</span>
+                            <h3 class="product-name"><a href="producto.html">Pantalón Cargo Crimson</a></h3>
+                            <p class="product-price"><span class="old-price">$90.00</span> $72.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card catalog-item" data-category="sudaderas" data-name="sudadera velvet red" data-price="85">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/bb1aa6fafc914b858361d48c7322bf22.jpg" alt="Sudadera Velvet Red" class="product-img main-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Sudaderas</span>
+                            <h3 class="product-name"><a href="producto.html">Sudadera Velvet Red</a></h3>
+                            <p class="product-price">$85.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card catalog-item" data-category="chaquetas" data-name="abrigo corte italiano" data-price="160">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/489f96b5937737e738f3c1789f232bcb.jpg" alt="Abrigo Corte Italiano" class="product-img main-img"></a>
+                            <div class="product-badges">
+                                <span class="badge badge-new">Exclusivo</span>
+                            </div>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Chaquetas</span>
+                            <h3 class="product-name"><a href="producto.html">Abrigo Corte Italiano</a></h3>
+                            <p class="product-price">$160.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card catalog-item" data-category="chaquetas" data-name="chaqueta nocturna velvet" data-price="135">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/6410aaca8434f0db8516faca33340e44.jpg" alt="Chaqueta Nocturna Velvet" class="product-img main-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Chaquetas</span>
+                            <h3 class="product-name"><a href="producto.html">Chaqueta Nocturna Velvet</a></h3>
+                            <p class="product-price">$135.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card catalog-item" data-category="camisetas" data-name="top saecr red line" data-price="55">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/ddde149b1134c4387cd174a99b8d2e31.jpg" alt="Top Saecr Red Line" class="product-img main-img"></a>
+                            <div class="product-badges">
+                                <span class="badge badge-sale">-15%</span>
+                            </div>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Camisetas</span>
+                            <h3 class="product-name"><a href="producto.html">Top Saecr Red Line</a></h3>
+                            <p class="product-price"><span class="old-price">$65.00</span> $55.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card catalog-item" data-category="pantalones" data-name="pantalon saecr oversize black" data-price="95">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/bbeba3902ab4b259335b31585e0369e6.jpg" alt="Pantalón Oversize Black" class="product-img main-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Pantalones</span>
+                            <h3 class="product-name"><a href="producto.html">Pantalón Oversize Black</a></h3>
+                            <p class="product-price">$95.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-card catalog-item" data-category="camisetas" data-name="camiseta saecr minimal red" data-price="50">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Minimal Red" class="product-img main-img"></a>
+                            <div class="product-badges">
+                                <span class="badge badge-new">Nuevo</span>
+                            </div>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Camisetas</span>
+                            <h3 class="product-name"><a href="producto.html">Camiseta Minimal Red</a></h3>
+                            <p class="product-price">$50.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="product-card catalog-item" data-category="chaquetas" data-name="chaqueta bomber saecr" data-price="140">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Bomber Saecr" class="product-img main-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Chaquetas</span>
+                            <h3 class="product-name"><a href="producto.html">Chaqueta Bomber Saecr</a></h3>
+                            <p class="product-price">$140.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 11 -->
+                    <div class="product-card catalog-item" data-category="sudaderas" data-name="hoodie crimson edition" data-price="88">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/bb1aa6fafc914b858361d48c7322bf22.jpg" alt="Hoodie Crimson Edition" class="product-img main-img"></a>
+                            <div class="product-badges">
+                                <span class="badge badge-sale">-10%</span>
+                            </div>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Sudaderas</span>
+                            <h3 class="product-name"><a href="producto.html">Hoodie Crimson Edition</a></h3>
+                            <p class="product-price"><span class="old-price">$98.00</span> $88.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 12 -->
+                    <div class="product-card catalog-item" data-category="pantalones" data-name="pantalon jogger saecr" data-price="80">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/ae776e731c3643b9effc28e7f2017b68.jpg" alt="Pantalón Jogger Saecr" class="product-img main-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Pantalones</span>
+                            <h3 class="product-name"><a href="producto.html">Pantalón Jogger Saecr</a></h3>
+                            <p class="product-price">$80.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 13 -->
+                    <div class="product-card catalog-item" data-category="chaquetas" data-name="gabardina saecr deluxe" data-price="175">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/489f96b5937737e738f3c1789f232bcb.jpg" alt="Gabardina Saecr Deluxe" class="product-img main-img"></a>
+                            <div class="product-badges">
+                                <span class="badge badge-preorder"><i class='bx bx-time-five'></i> Pre-Orden</span>
+                            </div>
+                            <button class="add-to-cart-btn"><i class='bx bx-time-five'></i> Pre-Ordenar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Chaquetas • Reserva</span>
+                            <h3 class="product-name"><a href="producto.html">Gabardina Saecr Deluxe</a></h3>
+                            <p class="product-price">$175.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 14 -->
+                    <div class="product-card catalog-item" data-category="camisetas" data-name="camisa urbana saecr black" data-price="60">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/ddde149b1134c4387cd174a99b8d2e31.jpg" alt="Camisa Urbana Black" class="product-img main-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Camisetas</span>
+                            <h3 class="product-name"><a href="producto.html">Camisa Urbana Black</a></h3>
+                            <p class="product-price">$60.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 15 -->
+                    <div class="product-card catalog-item" data-category="sudaderas" data-name="sudadera saecr oversize red" data-price="92">
+                        <div class="product-image-wrapper">
+                            <a href="producto.html"><img src="img/bb1aa6fafc914b858361d48c7322bf22.jpg" alt="Sudadera Oversize Red" class="product-img main-img"></a>
+                            <button class="add-to-cart-btn"><i class='bx bx-shopping-bag'></i> Agregar</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category-tag">Sudaderas</span>
+                            <h3 class="product-name"><a href="producto.html">Sudadera Oversize Red</a></h3>
+                            <p class="product-price">$92.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Results Message -->
+                <div id="no-results" class="no-results-msg" style="display: none;">
+                    <i class='bx bx-search-alt-2'></i>
+                    <h3>No se encontraron resultados</h3>
+                    <p>Intenta buscando con otro nombre o ajustando los filtros laterales.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="logo">SAECR</h2>
+                <p>Redefiniendo el minimalismo moderno con toques audaces.</p>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-tiktok'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="index.html#tallas">Guía de Tallas</a></li>
+                    <li><a href="#">Rastrea tu pedido</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Políticas</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Cambios y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Únete al Club SAECR</h3>
+                <p>Recibe ofertas exclusivas y acceso anticipado a nuevas colecciones.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit"><i class='bx bx-right-arrow-alt'></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SAECR. Todos los derechos reservados.</p>
+    <!-- Side Shopping Cart Drawer (Carrito de Compras Flotante) -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3><i class='bx bx-shopping-bag'></i> Mi Carrito (<span id="cart-drawer-count">2</span>)</h3>
+            <button class="close-cart-btn" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+
+        <div class="cart-drawer-items" id="cart-drawer-items">
+            <!-- Item 1 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element" class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Colección Urbana</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Chaqueta Noir Element</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>M</strong> | Color: <strong>Negro Noir</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-811</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$120.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> Ver detalle completo</a>
+                </div>
+                <button class="remove-item-btn" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Essential Blanca" class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Básicos SAECR</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Camiseta Essential Blanca</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>L</strong> | Color: <strong>Blanco Marfil</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-92c</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$45.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> Ver detalle completo</a>
+                </div>
+                <button class="remove-item-btn" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">$165.00</strong>
+            </div>
+            <div class="cart-summary-line">
+                <span>Envío</span>
+                <span class="free-shipping-tag">Gratis</span>
+            </div>
+            <p class="cart-tax-notice">Impuestos calculados en la pantalla de pago.</p>
+
+            <button class="btn btn-primary checkout-btn">Proceder al Pago <i class='bx bx-right-arrow-alt'></i></button>
+            <a href="catalogo.html" class="continue-shopping">Continuar Comprando</a>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+    <script src="catalogo.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAECR | Guía de Tallas</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SAECR</a>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#ofertas">Ofertas</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="tallas.html" class="active">Guía de Tallas</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                    <i class='bx bx-moon'></i>
+                </button>
+                <button class="icon-btn cart-toggle-btn" aria-label="Carrito" id="cart-toggle">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count-badge">2</span>
+                </button>
+                <a href="perfil.html" class="icon-btn" id="user-btn" title="Mi Cuenta / Iniciar Sesión">
+                    <i class='bx bx-user'></i>
+                </a>
+                <button class="icon-btn mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#ofertas">Ofertas</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="tallas.html">Guía de Tallas</a></li>
+        </ul>
+    </div>
+
+    <!-- Header Banner -->
+    <header class="catalog-header-banner">
+        <div class="container">
+            <h1 class="catalog-header-title">GUÍA DE TALLAS & MEDIDAS</h1>
+            <p class="catalog-header-subtitle">Asegura el ajuste ideal para cada una de tus prendas SAECR.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="section size-page-section">
+        <div class="container">
+            
+            <!-- Instructions Grid -->
+            <div class="measure-instructions-grid">
+                <div class="instruction-card">
+                    <div class="instruction-icon"><i class='bx bx-ruler'></i></div>
+                    <h3>1. Pecho / Busto</h3>
+                    <p>Mide rodeando la parte más sobresaliente del pecho con la cinta métrica horizontal respecto al suelo.</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon"><i class='bx bx-body'></i></div>
+                    <h3>2. Cintura</h3>
+                    <p>Mide el contorno de tu cintura natural, justo encima del ombligo, sin apretar la cinta métrica.</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon"><i class='bx bx-git-commit'></i></div>
+                    <h3>3. Cadera</h3>
+                    <p>De pie con los pies juntos, mide alrededor de la parte más ancha de las caderas.</p>
+                </div>
+            </div>
+
+            <!-- Size Tables Container -->
+            <div class="size-guide-container" style="margin-top: 4rem;">
+                <div class="size-tabs">
+                    <button class="tab-btn active" data-target="superior-page">Prendas Superiores (Chaquetas / Camisetas)</button>
+                    <button class="tab-btn" data-target="inferior-page">Prendas Inferiores (Pantalones / Shorts)</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="size-table active" id="superior-page">
+                        <thead>
+                            <tr>
+                                <th>Talla</th>
+                                <th>Pecho (cm)</th>
+                                <th>Cintura (cm)</th>
+                                <th>Hombro (cm)</th>
+                                <th>Largo (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>S</strong></td><td>90 - 94</td><td>76 - 80</td><td>44</td><td>68</td></tr>
+                            <tr><td><strong>M</strong></td><td>94 - 98</td><td>80 - 84</td><td>46</td><td>70</td></tr>
+                            <tr><td><strong>L</strong></td><td>98 - 104</td><td>84 - 90</td><td>48</td><td>72</td></tr>
+                            <tr><td><strong>XL</strong></td><td>104 - 110</td><td>90 - 96</td><td>50</td><td>74</td></tr>
+                            <tr><td><strong>XXL</strong></td><td>110 - 116</td><td>96 - 102</td><td>52</td><td>76</td></tr>
+                        </tbody>
+                    </table>
+
+                    <table class="size-table" id="inferior-page">
+                        <thead>
+                            <tr>
+                                <th>Talla Equiv.</th>
+                                <th>Cintura (cm)</th>
+                                <th>Cadera (cm)</th>
+                                <th>Largo Entrepierna (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>38 (S)</strong></td><td>76 - 80</td><td>92 - 96</td><td>102</td></tr>
+                            <tr><td><strong>40 (M)</strong></td><td>80 - 84</td><td>96 - 100</td><td>104</td></tr>
+                            <tr><td><strong>42 (L)</strong></td><td>84 - 88</td><td>100 - 104</td><td>106</td></tr>
+                            <tr><td><strong>44 (XL)</strong></td><td>88 - 92</td><td>104 - 108</td><td>108</td></tr>
+                            <tr><td><strong>46 (XXL)</strong></td><td>92 - 98</td><td>108 - 114</td><td>110</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Interactive Recommended Fit Box -->
+            <div class="fit-recommender-box">
+                <h3><i class='bx bx-calculator'></i> Calculadora de Ajuste Recomendado</h3>
+                <p>Ingresa tus datos para sugerirte la talla óptima:</p>
+                <div class="recommender-inputs">
+                    <div class="input-group">
+                        <label>Estatura (cm)</label>
+                        <input type="number" id="calc-height" placeholder="Ej: 175" value="175">
+                    </div>
+                    <div class="input-group">
+                        <label>Peso (kg)</label>
+                        <input type="number" id="calc-weight" placeholder="Ej: 70" value="70">
+                    </div>
+                    <button class="btn btn-primary" id="calc-btn">Calcular Talla</button>
+                </div>
+                <div class="calc-result" id="calc-result">
+                    Tu talla recomendada es: <strong>M (Ajuste Regular)</strong>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Side Shopping Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3><i class='bx bx-shopping-bag'></i> Mi Carrito (<span id="cart-drawer-count">2</span>)</h3>
+            <button class="close-cart-btn" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-drawer-items" id="cart-drawer-items">
+            <!-- Item 1 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/811127fc3b06ed0d25fab4647ac7745e.jpg" alt="Chaqueta Noir Element" class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Colección Urbana</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Chaqueta Noir Element</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>M</strong> | Color: <strong>Negro Noir</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-811</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$120.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> Ver detalle completo</a>
+                </div>
+                <button class="remove-item-btn" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="cart-item">
+                <a href="producto.html"><img src="img/92c0b1f370799be083c30d45b7eeafc8.jpg" alt="Camiseta Essential Blanca" class="cart-item-img"></a>
+                <div class="cart-item-details">
+                    <span class="cart-item-category">Básicos SAECR</span>
+                    <h4 class="cart-item-title"><a href="producto.html">Camiseta Essential Blanca</a></h4>
+                    <span class="cart-item-meta">Talla: <strong>L</strong> | Color: <strong>Blanco Marfil</strong></span>
+                    <span class="cart-item-meta">Ref: #SAE-92c</span>
+                    <div class="cart-item-price-row">
+                        <span class="cart-item-price">$45.00</span>
+                        <div class="cart-item-qty">
+                            <button class="item-qty-btn decrease-qty"><i class='bx bx-minus'></i></button>
+                            <span class="item-qty">1</span>
+                            <button class="item-qty-btn increase-qty"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+                    <a href="producto.html" class="cart-view-detail-btn"><i class='bx bx-show-alt'></i> Ver detalle completo</a>
+                </div>
+                <button class="remove-item-btn" title="Eliminar"><i class='bx bx-trash'></i></button>
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">$165.00</strong>
+            </div>
+            <div class="cart-summary-line">
+                <span>Envío</span>
+                <span class="free-shipping-tag">Gratis</span>
+            </div>
+            <p class="cart-tax-notice">Impuestos calculados en la pantalla de pago.</p>
+
+            <button class="btn btn-primary checkout-btn">Proceder al Pago <i class='bx bx-right-arrow-alt'></i></button>
+            <a href="catalogo.html" class="continue-shopping">Continuar Comprando</a>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="logo">SAECR</h2>
+                <p>Redefiniendo el minimalismo moderno con toques audaces.</p>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-tiktok'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="tallas.html">Guía de Tallas</a></li>
+                    <li><a href="#">Rastrea tu pedido</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Políticas</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Cambios y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Únete al Club SAECR</h3>
+                <p>Recibe ofertas exclusivas y acceso anticipado a nuevas colecciones.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit"><i class='bx bx-right-arrow-alt'></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SAECR. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple Fit Calculator
+        document.getElementById('calc-btn')?.addEventListener('click', () => {
+            const h = parseInt(document.getElementById('calc-height').value) || 170;
+            const w = parseInt(document.getElementById('calc-weight').value) || 70;
+            const res = document.getElementById('calc-result');
+            let size = 'M';
+            if (w < 62 || h < 165) size = 'S';
+            else if (w > 82 || h > 182) size = 'XL';
+            else if (w > 74 || h > 178) size = 'L';
+
+            res.innerHTML = `Tu talla recomendada es: <strong>${size} (Ajuste Óptimo)</strong>`;
+        });
+    </script>
+</body>
+</html>

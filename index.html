@@ -20,12 +20,12 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo gothic-logo">SÆCR</a>
+            <a href="index.html" class="logo gothic-logo">SÆCR</a>
             <ul class="nav-links">
                 <li><a href="#inicio">Home</a></li>
                 <li><a href="#ofertas">Offers</a></li>
-                <li><a href="ruleta.html"><i class='bx bx-gift'></i> Lucky Wheel</a></li>
                 <li><a href="catalogo.html">Catalog</a></li>
+                <li><a href="ruleta.html"><i class='bx bx-gift'></i> Lucky Wheel</a></li>
                 <li><a href="tallas.html">Size Guide</a></li>
             </ul>
             <div class="nav-actions">
@@ -53,6 +53,7 @@
             <li><a href="#inicio">Home</a></li>
             <li><a href="#ofertas">Offers</a></li>
             <li><a href="catalogo.html">Catalog</a></li>
+            <li><a href="ruleta.html"><i class='bx bx-gift'></i> Lucky Wheel</a></li>
             <li><a href="tallas.html">Size Guide</a></li>
         </ul>
     </div>
@@ -61,7 +62,6 @@
     <header id="inicio" class="hero-section hero-banner" style="background-image: url('img/baner.jpeg');">
         <div class="hero-overlay"></div>
         <div class="hero-content fade-up">
-            <span class="hero-badge"><i class='bx bx-plus-medical'></i> URBAN GOTHIC COLLECTION</span>
             <h1 class="hero-title gothic-title">SÆCR</h1>
             <p class="hero-subtitle">Avant-garde dark streetwear engineered with obsidian silhouettes and rebellious
                 identity.</p>
@@ -97,7 +97,16 @@
 
             <div class="carousel-wrapper fade-up-scroll">
                 <div class="carousel-container">
-                    <div class="carousel-slide active"
+                    <div class="carousel-slide active" style="background-image: url('img/wheel_promo_banner2.png');">
+                        <div class="carousel-content">
+                            <span class="badge badge-sale"><i class='bx bx-gift'></i> FORTUNE WHEEL DROP</span>
+                            <h2 class="slide-title">Spin & Win Up to 25% OFF</h2>
+                            <p class="slide-subtitle">Test your luck on the SÆCR Fortune Wheel and unlock instant
+                                discount coupons.</p>
+                            <a href="ruleta.html" class="btn btn-primary"><i class='bx bx-gift'></i> Spin Wheel Now</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide"
                         style="background-image: url('img/6410aaca8434f0db8516faca33340e44.jpg');">
                         <div class="carousel-content">
                             <span class="badge badge-sale">SPECIAL OFFER</span>
@@ -128,6 +137,7 @@
                         <span class="indicator active" data-index="0"></span>
                         <span class="indicator" data-index="1"></span>
                         <span class="indicator" data-index="2"></span>
+                        <span class="indicator" data-index="3"></span>
                     </div>
                 </div>
             </div>
@@ -599,11 +609,7 @@
                     </div>
                 </div>
 
-                <!-- Spin-to-Win Floating Button -->
-                <button class="wheel-floating-btn" id="open-wheel-btn">
-                    <i class='bx bx-gift bx-tada'></i>
-                    <span>Spin & Win OFF!</span>
-                </button>
+
 
                 <!-- Spin-to-Win Wheel Modal -->
                 <div class="modal-overlay" id="wheel-modal-overlay"></div>

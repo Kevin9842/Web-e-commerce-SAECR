@@ -17,31 +17,45 @@
 
 <body class="dark-mode">
     <!-- Navbar Navigation Header -->
-    <header class="navbar scrolled">
+    <!-- Navigation Header -->
+    <nav class="navbar scrolled" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo gothic-logo">SÆCR</a>
-
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="catalogo.html" class="nav-link">Collection</a>
-                <a href="ruleta.html" class="nav-link">Lucky Wheel</a>
-                <a href="tallas.html" class="nav-link">Size Guide</a>
-            </nav>
-
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Home</a></li>
+                <li><a href="index.html#ofertas">Offers</a></li>
+                <li><a href="catalogo.html">Catalog</a></li>
+                <li><a href="ruleta.html"><i class='bx bx-gift'></i> Lucky Wheel</a></li>
+                <li><a href="tallas.html">Size Guide</a></li>
+            </ul>
             <div class="nav-actions">
-                <button class="icon-btn theme-toggle" id="theme-toggle" title="Toggle Theme">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
                     <i class='bx bx-sun'></i>
                 </button>
-                <button class="icon-btn cart-btn" id="cart-btn" title="Cart">
+                <button class="icon-btn cart-toggle-btn" aria-label="Cart" id="cart-toggle">
                     <i class='bx bx-shopping-bag'></i>
-                    <span class="cart-count">2</span>
+                    <span class="cart-count-badge">2</span>
                 </button>
-                <a href="perfil.html" class="icon-btn user-btn" id="user-btn" title="My Account">
+                <a href="perfil.html" class="icon-btn" id="user-btn" title="My Account / Sign In">
                     <i class='bx bx-user'></i>
                 </a>
+                <button class="icon-btn mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </button>
             </div>
         </div>
-    </header>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html#inicio">Home</a></li>
+            <li><a href="index.html#ofertas">Offers</a></li>
+            <li><a href="catalogo.html">Catalog</a></li>
+            <li><a href="ruleta.html"><i class='bx bx-gift'></i> Lucky Wheel</a></li>
+            <li><a href="tallas.html">Size Guide</a></li>
+        </ul>
+    </div>
 
     <!-- Main Terms Content -->
     <main class="terms-page-main">

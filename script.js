@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startInterval() {
         if (totalSlides > 0) {
-            slideInterval = setInterval(nextSlide, 5000);
+            slideInterval = setInterval(nextSlide, 10000);
         }
     }
 
@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderConfetti();
     }
 
-    // Draw Wheel on Canvas
+    // Draw Urban Gothic SÆCR Wheel on Canvas
     function drawWheelOnCanvas(canvasEl) {
         if (!canvasEl) return;
         const ctx = canvasEl.getContext('2d');
@@ -578,33 +578,57 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.beginPath();
             ctx.fillStyle = prizes[i].color;
             ctx.moveTo(radius, radius);
-            ctx.arc(radius, radius, radius - 6, angle, angle + sliceAngle);
+            ctx.arc(radius, radius, radius - 8, angle, angle + sliceAngle);
             ctx.lineTo(radius, radius);
             ctx.fill();
 
-            // Divider Line
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-            ctx.lineWidth = 2;
+            // Urban Painted Crimson Divider Line
+            ctx.strokeStyle = i % 2 === 0 ? 'rgba(217, 4, 41, 0.7)' : 'rgba(255, 255, 255, 0.3)';
+            ctx.lineWidth = 3;
             ctx.stroke();
 
-            // Label
+            // Urban Grunge Texture spatter inside slice
+            ctx.save();
+            ctx.fillStyle = i % 2 === 0 ? 'rgba(255, 255, 255, 0.05)' : 'rgba(217, 4, 41, 0.08)';
+            const midAngle = angle + sliceAngle / 2;
+            for (let dots = 0; dots < 6; dots++) {
+                const rDot = (radius * 0.4) + (dots * 22);
+                const aDot = midAngle + ((dots % 2 === 0 ? 0.04 : -0.04));
+                ctx.beginPath();
+                ctx.arc(radius + Math.cos(aDot) * rDot, radius + Math.sin(aDot) * rDot, 2 + (dots % 2), 0, 2 * Math.PI);
+                ctx.fill();
+            }
+            ctx.restore();
+
+            // Gothic Label Typography
             ctx.save();
             ctx.translate(radius, radius);
             ctx.rotate(angle + sliceAngle / 2);
             ctx.textAlign = 'right';
             ctx.fillStyle = prizes[i].textColor;
-            ctx.font = 'bold 28px Outfit, sans-serif';
-            ctx.shadowColor = prizes[i].textColor === '#ffffff' ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.3)';
-            ctx.shadowBlur = 3;
-            ctx.fillText(prizes[i].label, radius - 50, 9);
+            ctx.font = '900 38px Cinzel, Outfit, sans-serif';
+            ctx.shadowColor = prizes[i].textColor === '#ffffff' ? 'rgba(0,0,0,0.9)' : 'rgba(255,255,255,0.6)';
+            ctx.shadowBlur = 6;
+            ctx.fillText(prizes[i].label, radius - 45, 12);
             ctx.restore();
         }
 
-        // Outer ring
+        // Inner Red Halo Ring (Aureola Roja SÆCR)
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(radius, radius, 72, 0, 2 * Math.PI);
+        ctx.strokeStyle = '#d90429';
+        ctx.lineWidth = 5;
+        ctx.shadowColor = '#d90429';
+        ctx.shadowBlur = 15;
+        ctx.stroke();
+        ctx.restore();
+
+        // Outer Metallic Rim
         ctx.beginPath();
         ctx.arc(radius, radius, radius - 4, 0, 2 * Math.PI);
-        ctx.strokeStyle = '#2a2a2a';
-        ctx.lineWidth = 5;
+        ctx.strokeStyle = '#1a1a1a';
+        ctx.lineWidth = 6;
         ctx.stroke();
     }
 
@@ -741,11 +765,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (openWheelBtn) openWheelBtn.addEventListener('click', openWheelModal);
     if (closeWheelBtn) closeWheelBtn.addEventListener('click', closeWheelModal);
     if (wheelOverlay) wheelOverlay.addEventListener('click', closeWheelModal);
-
-    // Auto open pop-up after 3 seconds on home page for previewing
-    if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
-        setTimeout(() => {
-            openWheelModal();
-        }, 3000);
-    }
 });

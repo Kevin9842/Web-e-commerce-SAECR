@@ -3982,15 +3982,19 @@ body.dark-mode .wheel-modal {
 
 .wheel-pointer {
     position: absolute;
-    top: -20px;
+    top: -26px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 20;
-    width: 36px;
-    height: 44px;
-    background: linear-gradient(180deg, #ffd700 0%, #d4af37 70%, #b8860b 100%);
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
-    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.6));
+    z-index: 35;
+    width: 34px;
+    height: 64px;
+    background: linear-gradient(180deg, #111111 0%, #d90429 20%, #ef233c 70%, #900018 100%);
+    clip-path: polygon(
+        35% 0%, 65% 0%, 65% 18%, 95% 18%, 95% 26%, 65% 26%,
+        65% 32%, 85% 32%, 50% 100%, 15% 32%, 35% 32%, 35% 26%,
+        5% 26%, 5% 18%, 35% 18%
+    );
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 14px rgba(217, 4, 41, 0.8));
     transform-origin: 50% 0%;
     transition: transform 0.08s ease;
 }
@@ -4001,15 +4005,16 @@ body.dark-mode .wheel-modal {
     top: 4px;
     left: 50%;
     transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    box-shadow: 0 0 8px #ff4d6d;
+    width: 3px;
+    height: 22px;
+    background: #ffffff;
+    box-shadow: 0 0 8px #ffffff;
+    border-radius: 2px;
+    opacity: 0.85;
 }
 
 .wheel-pointer.tick {
-    transform: translateX(-50%) rotate(-14deg) scale(1.1);
+    transform: translateX(-50%) rotate(-14deg) scale(1.15);
 }
 
 .wheel-canvas {
@@ -4032,9 +4037,9 @@ body.dark-mode .wheel-modal {
     background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%) !important;
     color: #ffffff !important;
     border: 3px solid var(--primary-color) !important;
-    font-weight: 800 !important;
-    font-size: 1rem !important;
-    font-family: var(--font-primary) !important;
+    font-weight: 900 !important;
+    font-size: 1.05rem !important;
+    font-family: var(--font-gothic), sans-serif !important;
     letter-spacing: 2px !important;
     text-transform: uppercase !important;
     cursor: pointer !important;
